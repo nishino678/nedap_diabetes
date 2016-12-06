@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  get 'users/new'
+  get 'news/show_all'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'users/new'
+  get  '/news',    to: 'news#show_all'
+  get  '/news/new',    to: 'news#new'
+  resources :news
 end
