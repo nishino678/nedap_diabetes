@@ -9,7 +9,5 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   resources :users
-  get  '/news',    to: 'news#show_all'
-  get  '/news/new',    to: 'news#new'
-  resources :news
+  resources :articles
 end

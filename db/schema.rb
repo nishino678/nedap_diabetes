@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161206131607) do
+ActiveRecord::Schema.define(version: 20161206152109) do
 
   create_table "answers", force: :cascade do |t|
     t.integer  "question_id"
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 20161206131607) do
     t.string   "answer_specialist"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+  end
+
+  create_table "articles", force: :cascade do |t|
+    t.string   "title"
+    t.string   "author"
+    t.string   "content"
+    t.string   "source"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "favorites", force: :cascade do |t|
