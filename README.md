@@ -1,25 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a school project, creating a web-app for diabetic type 2 patients which can:
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# nedap_diabetes
+* Help patients verify information
+* Teach them to be able to verify information themselves
+* Learn us to use github and RoR!
+* sudo make us a sandwich
