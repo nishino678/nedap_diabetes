@@ -10,17 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161206152109) do
+ActiveRecord::Schema.define(version: 20161208091446) do
 
   create_table "answers", force: :cascade do |t|
     t.integer  "question_id"
-    t.string   "answer_1"
-    t.string   "answer_2"
-    t.string   "answer_3"
-    t.integer  "specialist_id"
-    t.string   "answer_specialist"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.string   "content"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
   create_table "articles", force: :cascade do |t|
@@ -39,41 +36,12 @@ ActiveRecord::Schema.define(version: 20161206152109) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "news", force: :cascade do |t|
-    t.string   "news_title"
-    t.string   "news_author"
-    t.string   "news_content"
-    t.string   "news_url"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
-  create_table "news_tags", force: :cascade do |t|
-    t.integer  "tag_id"
-    t.integer  "news_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "questions", force: :cascade do |t|
-    t.string   "question_content"
-    t.integer  "news_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-  end
-
-  create_table "specialists", force: :cascade do |t|
-    t.string   "specialist_name"
-    t.string   "specialist_profession"
-    t.string   "specialist_bio"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
-  end
-
-  create_table "tags", force: :cascade do |t|
-    t.string   "tag_name"
+    t.integer  "article_id"
+    t.string   "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_questions_on_article_id"
   end
 
   create_table "users", force: :cascade do |t|

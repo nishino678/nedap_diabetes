@@ -1,0 +1,20 @@
+<%= form_for @article do |content| %>
+
+<%= content.label "Berichttitel:" %><br />
+<%= content.text_field :title %><br />
+
+<%= content.label "Auteur" %><br />
+<%= content.text_field :author %><br />
+
+<%= content.label "Inhoudcontent" %><br />
+<%= content.text_area :content %><br />
+
+<%= content.label "Bron" %><br />
+<%= content.text_field :source %><br />
+
+<%= content.fields_for :questions do |builder| %>
+  <%= render 'question_fields', :f => builder %>
+<% end %>
+
+<%= content.submit "Publiceer artikel", class: "btn btn-primary" %>
+<% end %>

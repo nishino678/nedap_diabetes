@@ -8,5 +8,12 @@ class CreateArticles < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+
+    create_table :questions do |t|
+      t.belongs_to :article
+      t.string :content
+
+      t.timestamps
+    end
   end
 end

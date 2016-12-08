@@ -1,5 +1,24 @@
-<ul><h1><%= @article.title %></h1></ul>
+<ul><h2><%= @article.title %></h2></ul>
 <ul>geschreven door: <%= @article.author %></ul>
 <ul><%= @article.content %></ul>
 <ul>bron: <%= @article.source %></ul>
+
+<ul><h2>Antwoorden</h2></ul>
+
+<ul>
+<% for x in 0..2 %>
+  <%= question_content(x) %><br /> 
+  <% for i in 0..2 %>
+    <%= question_answer(x, i) %><br />
+  <% end %>
+  <br />
+<% end %>
+</ul>
+
+
+
+
 <%= link_to "Terug naar overzicht", :articles %>
+
+<%= link_to "Verwijder artikel", @article, method: :delete,
+                                  data: { confirm: "Weet je het zeker?" } %>
