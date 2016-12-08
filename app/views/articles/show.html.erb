@@ -3,3 +3,10 @@
 <ul><%= @article.content %></ul>
 <ul>bron: <%= @article.source %></ul>
 <%= link_to "Terug naar overzicht", :articles %>
+
+
+<% if current_user.favorited?(@article) %>
+  <%= link_to "Unfavorite", article_favorite_path(@article), method: :delete %>
+    <% else %>
+  <%= link_to "Favorite", article_favorite_path(@article), method: :post %>
+<% end %>

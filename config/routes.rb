@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
+  get 'users/:id/favorites', to: 'users#favorites'
   resources :users
-  resources :articles
+  resources :articles do
+    resource :favorite, only: [:index, :create, :destroy]
+  end
 end
