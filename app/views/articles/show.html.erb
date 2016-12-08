@@ -5,14 +5,7 @@
 
 <ul><h2>Vragen en antwoorden</h2></ul>
 
-<%= link_to "Terug naar overzicht", :articles %>
 
-
-<% if current_user.favorited?(@article) %>
-  <%= link_to "Unfavorite", article_favorite_path(@article), method: :delete %>
-    <% else %>
-  <%= link_to "Favorite", article_favorite_path(@article), method: :post %>
-<% end %>
 
 <ul><h2>Antwoorden</h2></ul>
 
@@ -41,4 +34,13 @@ Over de specialist: <%= @article.specialist.bio %><br />
 
 <%= link_to "Terug naar overzicht", :articles %>
 
+
+
+<% if current_user.favorited?(@article) %>
+  <%= link_to "Favoriet verwijderen", article_favorite_path(@article), method: :delete %>
+    <% else %>
+  <%= link_to "Artikel opslaan in favorieten", article_favorite_path(@article), method: :post %>
+<% end %>
+
+<br />
 <%= link_to "Verwijder artikel", @article, method: :delete, data: { confirm: "Weet je het zeker?" } %>

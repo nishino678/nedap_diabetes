@@ -4,18 +4,18 @@ class FavoritesController < ApplicationController
   def create
     favorite = current_user.favorites.new(favorited: @article)
     if favorite.save
-      redirect_to @article, notice: 'Article has been favorited'
+      redirect_to @article, notice: 'Artikel opgeslagen in favorieten'
     else
-      redirect_to @article, alert: 'Something went wrong.'
+      redirect_to @article, alert: 'Er is iets misgegaan.'
     end
   end
   
   def destroy
     favorite = current_user.favorites.find_by(favorited: @article)
     if favorite.destroy
-      redirect_to @article, notice: 'Article is no longer in favorites'
+      redirect_to @article, notice: 'Artikel is verwijderd uit favorieten'
     else
-      redirect_to @article, notice: 'Favorite is not destroyed'
+      redirect_to @article, notice: 'Er is iets misgegaan.'
     end
   end
   
