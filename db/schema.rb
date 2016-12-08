@@ -29,6 +29,13 @@ ActiveRecord::Schema.define(version: 20161208091446) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "articles_users", id: false, force: :cascade do |t|
+    t.integer "article_id"
+    t.integer "user_id"
+    t.index ["article_id"], name: "index_articles_users_on_article_id"
+    t.index ["user_id"], name: "index_articles_users_on_user_id"
+  end
+
   create_table "favorites", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "favorited_type"
