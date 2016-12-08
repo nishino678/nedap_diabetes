@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161208091446) do
+ActiveRecord::Schema.define(version: 20161208143715) do
 
   create_table "answers", force: :cascade do |t|
     t.integer  "question_id"
@@ -21,12 +21,15 @@ ActiveRecord::Schema.define(version: 20161208091446) do
   end
 
   create_table "articles", force: :cascade do |t|
+    t.integer  "specialist_id"
     t.string   "title"
     t.string   "author"
     t.string   "content"
     t.string   "source"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "explanation"
+    t.index ["specialist_id"], name: "index_articles_on_specialist_id"
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -42,6 +45,14 @@ ActiveRecord::Schema.define(version: 20161208091446) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["article_id"], name: "index_questions_on_article_id"
+  end
+
+  create_table "specialists", force: :cascade do |t|
+    t.string   "name"
+    t.string   "profession"
+    t.string   "bio"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

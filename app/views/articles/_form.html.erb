@@ -16,5 +16,11 @@
   <%= render 'question_fields', :f => builder %>
 <% end %>
 
+<%= content.label "Uitleg specialist" %><br />
+<%= content.text_area :explanation %><br />
+
+<%= content.label "ID specialist" %><br />
+<%= content.text_area :specialist_id %><br />
+
 <%= content.submit "Publiceer artikel", class: "btn btn-primary" %>
 <% end %>

@@ -5,4 +5,6 @@ class Article < ApplicationRecord
   validates :source, presence: true
   has_many :questions, inverse_of: :article
   accepts_nested_attributes_for :questions
+  belongs_to :specialist, inverse_of: :articles
+
 end

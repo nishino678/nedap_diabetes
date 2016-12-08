@@ -35,7 +35,8 @@ class ArticlesController < ApplicationController
 
   def news_params
     #params.require(:article).permit!
-    params.require(:article).permit(:id, :title, :author, :content, :source,
+    params.require(:article).permit(:id, :specialist_id, :explanation, :title, :author, :content, :source,
+      specialists_attributs: [:id],
       questions_attributes: [:id, :content, :article_id,
         answers_attributes: [:id, :content
         ]

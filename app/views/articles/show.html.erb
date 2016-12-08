@@ -3,7 +3,7 @@
 <ul><%= @article.content %></ul>
 <ul>bron: <%= @article.source %></ul>
 
-<ul><h2>Antwoorden</h2></ul>
+<ul><h2>Vragen en antwoorden</h2></ul>
 
 <ul>
 <% for x in 0..2 %>
@@ -15,10 +15,19 @@
 <% end %>
 </ul>
 
+<ul><h2>Uitleg van de specialist</h2></ul>
+
+<ul>
+Advies van: <%= @article.specialist.name %> <br />
+<br />
+<ul> <%= @article.explanation %> </ul>
+<br />
+Beroep specialist: <%= @article.specialist.profession %> <br />
+Over de specialist: <%= @article.specialist.bio %><br />
+</ul>
 
 
 
 <%= link_to "Terug naar overzicht", :articles %>
 
-<%= link_to "Verwijder artikel", @article, method: :delete,
-                                  data: { confirm: "Weet je het zeker?" } %>
+<%= link_to "Verwijder artikel", @article, method: :delete, data: { confirm: "Weet je het zeker?" } %>
