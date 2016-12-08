@@ -5,6 +5,17 @@
 
 <ul><h2>Vragen en antwoorden</h2></ul>
 
+<%= link_to "Terug naar overzicht", :articles %>
+
+
+<% if current_user.favorited?(@article) %>
+  <%= link_to "Unfavorite", article_favorite_path(@article), method: :delete %>
+    <% else %>
+  <%= link_to "Favorite", article_favorite_path(@article), method: :post %>
+<% end %>
+
+<ul><h2>Antwoorden</h2></ul>
+
 <ul>
 <% for x in 0..2 %>
   <%= question_content(x) %><br /> 

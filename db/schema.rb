@@ -32,11 +32,21 @@ ActiveRecord::Schema.define(version: 20161208143715) do
     t.index ["specialist_id"], name: "index_articles_on_specialist_id"
   end
 
+  create_table "articles_users", id: false, force: :cascade do |t|
+    t.integer "article_id"
+    t.integer "user_id"
+    t.index ["article_id"], name: "index_articles_users_on_article_id"
+    t.index ["user_id"], name: "index_articles_users_on_user_id"
+  end
+
   create_table "favorites", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "news_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "favorited_type"
+    t.integer  "favorited_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["favorited_type", "favorited_id"], name: "index_favorites_on_favorited_type_and_favorited_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "questions", force: :cascade do |t|
