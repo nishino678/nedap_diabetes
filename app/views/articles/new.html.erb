@@ -1,15 +1,1 @@
-<%= form_for(@article) do |f| %>
-<%= f.label "Berichttitel:" %>
-<%= f.text_field :title %>
-
-<%= f.label "Auteur" %>
-<%= f.text_field :author %>
-
-<%= f.label "Inhoudcontent" %>
-<%= f.text_field :content %>
-
-<%= f.label "Bron" %>
-<%= f.text_field :source %>
-
-<%= f.submit "Publiceer artikel", class: "btn btn-primary" %>
-<% end %>
+<%= render 'form' %>
