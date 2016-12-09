@@ -1,0 +1,17 @@
+<%= form_for @specialist do |f| %>
+
+      <%= f.label "Naam specialist:" %>
+      <%= f.text_field :name %>
+      <br />
+
+      <%= f.label "Functie specialist:" %>
+      <%= f.text_field :profession %>   
+      <br />   
+
+      <%= f.label "Over de specialist:" %>
+      <%= f.text_field :bio %>
+      <br />
+
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+      <br />
+<% end %>
