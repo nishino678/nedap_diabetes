@@ -1,15 +1,17 @@
 <h1>Favoriete Artikelen</h1>
 
-<% @user.favorites.each do |article| %>
-<ul><h2>
-  <%= link_to article.title, article %>
-  <%= article.created_at.strftime("%e-%m") %>
-
 <% if @favorite %>
   <%= form_for([@article, @favorite], method: "delete") do %>
     <%= submit_tag "Remove favorite" %>
   <% end %>
-</h2></ul>
-  -----------------------------------
 <% end %>
+
+<% @user.favorites.each do |favorited| %>
+<ul>
+<% article = favorited.favorited_id %>
+<%= link_to Article.find(article).title, article_path(article) %>
+<%= link_to "Favoriet verwijderen", article_favorite_path(article), method: :delete %>
+<br />
+  -----------------------------------
+</ul>
 <% end %>
