@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     if logged_in?
       redirect_to articles_path
     else
-      render log_in_path
+      render 'new'
     end
   end
 
