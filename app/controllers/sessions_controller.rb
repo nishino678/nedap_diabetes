@@ -1,6 +1,12 @@
 class SessionsController < ApplicationController
 
   def new
+    #check of dit werkt als logout werkt
+    if logged_in?
+      redirect_to articles_path
+    else
+      render log_in_path
+    end
   end
 
   def create
