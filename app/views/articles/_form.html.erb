@@ -1,5 +1,7 @@
 <%= form_for @article do |content| %>
 
+<%= render 'shared/error_messages_article' %>
+
 <%= content.label "Berichttitel:" %><br />
 <%= content.text_field :title %><br />
 
