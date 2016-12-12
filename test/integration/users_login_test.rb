@@ -47,6 +47,6 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     delete logout_path
     # Log in again and verify that the cookie is deleted.
     log_in_as(@user, remember_me: '0')
-    # assert_nil cookies['remember_token']
+    assert_nil cookies['remember_token']
   end
 end
