@@ -11,7 +11,7 @@
 
 <ul>
 <% for x in 0..2 %>
-  <%= question_content(x) %><br /> 
+  <%= question_content(x) %><br />
   <% for i in 0..2 %>
     <%= question_answer(x, i) %><br />
   <% end %>
@@ -30,17 +30,14 @@
 <b>Over de specialist: </b><%= @article.specialist.bio %><br />
 </ul>
 
-
-
 <%= link_to "Terug naar overzicht", :articles %>
-
-
 
 <% if current_user.favorited?(@article) %>
   <%= link_to "Favoriet verwijderen", article_favorite_path(@article), method: :delete %>
     <% else %>
-  <%= link_to "Artikel opslaan in favorieten", article_favorite_path(@article), method: :post %>
+  <%= link_to "Opslaan in favorieten", article_favorite_path(@article), method: :post %>
 <% end %>
 
 <br />
-<%= link_to "Verwijder artikel", @article, method: :delete, data: { confirm: "Weet je het zeker?" } %>
+<%= link_to "Verwijder", @article, method: :delete, data: { confirm: "Weet je het zeker?" } %>
+<%= link_to "Bewerk", edit_article_path %>

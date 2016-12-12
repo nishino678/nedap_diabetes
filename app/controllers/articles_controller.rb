@@ -16,6 +16,21 @@ def index
   @article = Article.all.order('created_at DESC')
 end
 
+def edit
+  @article = Article.find(params[:id])
+end
+
+  def update
+    @article = Article.find(params[:id])
+      if @article.update_attributes(news_params)
+      flash[:succes] = "Artikel bijgewerkt"
+      redirect_to @article
+    else
+      render 'edit'
+    end
+  end
+
+
 def create
   @article = Article.new(news_params)
   if @article.save
