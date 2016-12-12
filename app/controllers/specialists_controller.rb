@@ -7,6 +7,10 @@ class SpecialistsController < ApplicationController
     @specialist = Specialist.find(params[:id])
   end
 
+  def index
+    @specialist = Specialist.all
+  end
+
   def create
     @specialist = Specialist.new(specialist_params)
     if @specialist.save
@@ -19,10 +23,24 @@ class SpecialistsController < ApplicationController
     end
   end
 
+  def edit
+    @specialist = Specialist.find(params[:id])
+  end
+
+  def update
+    @specialist = Specialist.find(params[:id])
+    if @specialist.update_attributes(specialist_params)
+      flash[:succes] = "Specialist bijgewerkt"
+      redirect_to @specialist
+    else
+      render 'edit'
+    end
+  end
+
 private
 
   def specialist_params
-    params.require(:specialist).permit(:id, :name, :bio, :profession)  
+    params.require(:specialist).permit(:id, :name, :bio, :profession)
   end
 
 end

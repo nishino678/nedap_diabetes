@@ -1,0 +1,17 @@
+<%= form_for(@specialist) do |f| %>
+
+      <%= f.label "Naam specialist:" %>
+      <%= f.text_field :name %>
+      <br />
+
+      <%= f.label "Functie specialist:" %>
+      <%= f.text_field :profession %>
+      <br />
+
+      <%= f.label "Over de specialist:" %>
+      <%= f.text_area :bio, rows: 10 %>
+      <br />
+
+      <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+      <br />
+<% end %>
