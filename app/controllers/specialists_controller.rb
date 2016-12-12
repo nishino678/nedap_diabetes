@@ -27,6 +27,12 @@ class SpecialistsController < ApplicationController
     @specialist = Specialist.find(params[:id])
   end
 
+  def destroy
+    Specialist.find(params[:id]).destroy
+    flash[:success] = "Specialist verwijderd"
+    redirect_to specialists_url
+  end
+
   def update
     @specialist = Specialist.find(params[:id])
     if @specialist.update_attributes(specialist_params)

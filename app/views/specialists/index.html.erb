@@ -1,5 +1,9 @@
+<%= link_to 'Specialist toevoegen', new_specialist_path %>
 <% @specialist.each do |specialist| %>
-<ul><h2>
+<ul>
   <%= link_to specialist.name, specialist %>
-</h2></ul>
+  <%= link_to 'bewerk specialist', edit_specialist_path(specialist) %>
+  <%= link_to 'verwijder specialist', specialist, method: :delete,
+                                  data: { confirm: "Weet je het zeker?" } %>
+</ul>
 <% end  %>
