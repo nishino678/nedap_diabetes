@@ -13,7 +13,8 @@
 <% for x in 0..2 %>
   <%= question_content(x) %><br />
   <% for i in 0..2 %>
-    <%= question_answer(x, i) %><br />
+    <%= question_answer(x, i) %>
+    <%= question_answer_correct?(x, i) %><br />
   <% end %>
   <br />
 <% end %>

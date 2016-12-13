@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get 'password_resets/edit'
 
-  root 'sessions#new'
+  root 'welcome#index'
   get 'sessions/new'
   get 'users/new'
   get  '/signup',  to: 'users#new'

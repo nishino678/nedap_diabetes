@@ -1,9 +1,3 @@
-<% provide(:title, @user.username) %>
-
-        <%= @user.username %>
-
-    <%= link_to "Ga naar artikelen", articles_path %>
-
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
-
+Welkom, <%= @user.username %>.<br />
+<%= link_to "Ga naar artikelen", articles_path %><br/>
 <%= link_to "Log out", logout_path, method: "delete" %>
