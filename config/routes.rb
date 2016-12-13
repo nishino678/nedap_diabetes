@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
   root 'sessions#new'
   get 'sessions/new'
   get 'users/new'
@@ -17,4 +21,5 @@ Rails.application.routes.draw do
     resource :favorite, only: [:index, :create, :destroy]
     resources :questions
   end
+  resources :password_resets,     only: [:new, :create, :edit, :update]
 end
