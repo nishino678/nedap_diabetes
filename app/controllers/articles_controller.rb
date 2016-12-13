@@ -44,7 +44,7 @@ end
 
 def destroy
   Article.find(params[:id]).destroy
-  redirect_to 'index'
+  redirect_to articles_path
 end
 
 private
