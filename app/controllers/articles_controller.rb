@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
-  before_action :logged_in_user, only: [:show, :index, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:show, :index]
+  before_action :admin_user,     only: [:new, :edit, :destroy]
 
   def new
     @article = Article.new
