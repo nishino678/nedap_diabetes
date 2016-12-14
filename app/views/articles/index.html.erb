@@ -1,3 +1,5 @@
+<%= link_to 'Vorige', 'javascript:history.go(-1);' %>
+
 <h1>Artikelen</h1>
 <%= link_to "Profiel", current_user%><br />
 ____________________________________________________________________
@@ -12,5 +14,5 @@ ____________________________________________________________________
 <br />
 <% if current_user.admin? %>
 <%= link_to "Nieuw artikel", new_article_path %>
-<%= link_to "Nieuwe specialist", new_specialist_path %>
+<%= link_to "Beheer specialisten", specialists_path %>
 <% end %>

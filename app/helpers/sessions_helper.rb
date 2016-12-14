@@ -39,13 +39,6 @@ module SessionsHelper
     current_user.admin?
   end
 
-  # Forgets a persistent session.
-  def forget(user)
-    user.forget
-    cookies.delete(:user_id)
-    cookies.delete(:remember_token)
-  end
-
   # Logs out the current user.
   def log_out
     forget(current_user)
@@ -66,6 +59,12 @@ private
 
   def admin_user
     redirect_to(root_url) unless current_user.admin?
+  end
+
+  def forget(user)
+    user.forget
+    cookies.delete(:user_id)
+    cookies.delete(:remember_token)
   end
 
   def logged_in_user

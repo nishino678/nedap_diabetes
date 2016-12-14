@@ -1,4 +1,6 @@
-<h1>Favoriete Artikelen</h1>
+<%= link_to 'Vorige', 'javascript:history.go(-1);' %>
+
+<h1>Favoriete artikelen van <%= @user.firstname %></h1>
 
 <% if @favorite %>
   <%= form_for([@article, @favorite], method: "delete") do %>

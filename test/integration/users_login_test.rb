@@ -4,6 +4,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
 
   def setup
     @user = users(:example)
+    @admin = users(:admin)
   end
 
   test "login with invalid information" do
@@ -22,16 +23,41 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert_redirected_to articles_path
     follow_redirect!
     assert_template 'articles/index'
-    #assert_select "a[href=?]", login_path, count: 0
-    #assert_select "a[href=?]", logout_path
-    #assert_select "a[href=?]", user_path(@user)
-    #delete logout_path
-    #assert_not is_logged_in?
-    #assert_redirected_to root_url
-    #follow_redirect!
-    #assert_select "a[href=?]", login_path
-    #assert_select "a[href=?]", logout_path,      count: 0
-    #assert_select "a[href=?]", user_path(@user), count: 0
+    delete logout_path
+    assert_not is_logged_in?
+    assert_redirected_to root_url
+    follow_redirect!
+    assert_template 'welcome/index'
+  end
+
+  test "non admin can't see add article and specialist button" do
+    log_in_as(@user, remember_me: '0')
+    get articles_path
+    assert_select "a[href=?]", new_article_path,      count: 0
+    assert_select "a[href=?]", specialists_path,      count: 0
+  end
+
+  test "admin can see add article and specialist button" do
+    log_in_as(@admin, remember_me: '0')
+    get articles_path
+    assert_select "a[href=?]", new_article_path
+    assert_select "a[href=?]", specialists_path
+  end
+
+  test "logged in user can't get specialists path" do
+    log_in_as(@user, remember_me: '0')
+    get specialists_path
+    assert_redirected_to root_url
+    follow_redirect!
+    assert_redirected_to articles_path
+  end
+
+  test "logged in user can't get add article path" do
+    log_in_as(@user, remember_me: '0')
+    get new_article_path
+    assert_redirected_to root_url
+    follow_redirect!
+    assert_redirected_to articles_path
   end
 
   test "login with remembering" do
