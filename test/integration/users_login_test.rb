@@ -3,7 +3,7 @@ require 'test_helper'
 class UsersLoginTest < ActionDispatch::IntegrationTest
 
   def setup
-    @user = users(:wimbo)
+    @user = users(:example)
   end
 
   test "login with invalid information" do
@@ -12,8 +12,6 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     post login_path, params: { session: { email: "", password: "" } }
     assert_template 'sessions/new'
     assert_not flash.empty?
-    #get root_path
-    #assert flash.empty?
   end
 
   test "login with valid information followed by logout" do
@@ -21,9 +19,9 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     post login_path, params: { session: { email:    @user.email,
                                           password: 'password' } }
     assert is_logged_in?
-    assert_redirected_to @user
+    assert_redirected_to articles_path
     follow_redirect!
-    assert_template 'users/show'
+    assert_template 'articles/index'
     #assert_select "a[href=?]", login_path, count: 0
     #assert_select "a[href=?]", logout_path
     #assert_select "a[href=?]", user_path(@user)
@@ -37,6 +35,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
   end
 
   test "login with remembering" do
+    #login and set cookie
     log_in_as(@user, remember_me: '1')
     assert_not_nil cookies['remember_token']
   end
@@ -47,6 +46,6 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     delete logout_path
     # Log in again and verify that the cookie is deleted.
     log_in_as(@user, remember_me: '0')
-    assert_nil cookies['remember_token']
+    assert_empty cookies['remember_token']
   end
 end
