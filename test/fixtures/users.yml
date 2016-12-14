@@ -1,6 +1,5 @@
-wimbo:
-  username: Wimboslice
-  #firstname: Wimbo
-  #lastname: Slice
-  email: wimbo@slice.com
+example:
+  firstname: ExampleUser
+  email: user@example.com
   password_digest: <%= User.digest('password') %>
+  admin: false
