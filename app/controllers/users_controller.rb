@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:success] = "Welcome to the Nedap diabetes app!"
+      flash[:success] = "Account succesvol aangemaakt!"
       redirect_to @user
       # Handle a successful save.
     else
@@ -43,7 +43,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:username, :firstname, :lastname, :email, :password, :password_confirmation)
+      params.require(:user).permit(:firstname, :email, :password, :password_confirmation)
     end
 
     def correct_user
