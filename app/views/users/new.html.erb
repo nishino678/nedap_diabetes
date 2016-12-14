@@ -1,3 +1,4 @@
+<% provide(:button_text, "Aanmelden") %>
 <h1>Aanmelden</h1>
 
 Om aan te melden heb ik nog wat gegevens van je nodig. <br />
@@ -5,11 +6,8 @@ Het invullen is zo klaar.
 
 <%= form_for(@user, url: signup_path) do |f| %>
   <%= render 'shared/error_messages' %>
-  <%= f.text_field :username, placeholder: "Gebruikersnaam.." %> <br />
   <%= f.text_field :firstname, placeholder: "Voornaam.." %> <br />
-  <%= f.text_field :lastname, placeholder: "Achternaam.." %> <br />
-  <%= f.email_field :email, placeholder: "Email.." %> <br />
-  <%= f.password_field :password, placeholder: "Wachtwoord.." %> <br />
-  <%= f.password_field :password_confirmation, placeholder: "Bevestig wachtwoord.." %> <br />
-  <%= f.submit "Account aanmaken", class: "btn btn-primary" %> <br />
+
+<%= render 'form' %>
+ 
 <% end %>
