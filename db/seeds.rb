@@ -5,6 +5,17 @@ User.create!(
   email: "henk@devries.nl",
   password:              "123456",
   password_confirmation: "123456",
+  admin: true
+ )
+
+User.create!(
+  firstname:  "Example",
+  lastname: "User",
+  username: "exampleuser",
+  email: "user@example.com",
+  password:              "123456",
+  password_confirmation: "123456",
+  admin: false
  )
 
 Specialist.create!(

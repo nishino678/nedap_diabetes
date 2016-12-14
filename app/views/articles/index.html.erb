@@ -1,5 +1,5 @@
 <h1>Artikelen</h1>
-<%= link_to "Profiel", current_user%>
+<%= link_to "Profiel", current_user%><br />
 ____________________________________________________________________
 
 <% @article.each do |article| %>
@@ -10,5 +10,7 @@ ____________________________________________________________________
 ____________________________________________________________________
 <% end %>
 <br />
+<% if current_user.admin? %>
 <%= link_to "Nieuw artikel", new_article_path %>
 <%= link_to "Nieuwe specialist", new_specialist_path %>
+<% end %>

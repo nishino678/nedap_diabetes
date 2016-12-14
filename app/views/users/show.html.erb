@@ -1,3 +1,4 @@
 Welkom, <%= @user.username %>.<br />
 <%= link_to "Ga naar artikelen", articles_path %><br/>
 <%= link_to "Log out", logout_path, method: "delete" %>
+<%= current_user.admin? %>
