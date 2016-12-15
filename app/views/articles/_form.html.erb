@@ -6,6 +6,7 @@
 <%= content.text_field :author, placeholder: 'Auteur..' %><br />
 <%= content.text_area :content, placeholder: 'Origineel nieuwsbericht..' %><br />
 <%= content.text_field :source, placeholder: 'Bron nieuwsbericht..' %><br />
+<%= content.text_field :all_tags, placeholder: "Tags separated with comma" %>
 <h2> Vragen bij artikel </h2>
 
 <%= content.fields_for :questions do |builder| %>
