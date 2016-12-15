@@ -1,4 +1,5 @@
-<%= link_to 'Vorige', 'javascript:history.go(-1);' %>
+<% @back_or_search = "back" %>
+<%= render 'shared/header' %>
 
 <ul><h2><%= @article.title %></h2></ul>
 <ul>geschreven door: <%= @article.author %></ul>
@@ -6,9 +7,6 @@
 <ul>bron: <%= @article.source %></ul>
 
 <ul><h2>Vragen en antwoorden</h2></ul>
-
-
-
 <ul><h2>Antwoorden</h2></ul>
 
 <ul>
@@ -33,14 +31,14 @@
 <b>Over de specialist: </b><%= @article.specialist.bio %><br />
 </ul>
 
-<%= link_to "Terug naar overzicht", :articles %>
-
 <% if current_user.favorited?(@article) %>
   <%= link_to "Favoriet verwijderen", article_favorite_path(@article), method: :delete %>
-    <% else %>
+<% else %>
   <%= link_to "Opslaan in favorieten", article_favorite_path(@article), method: :post %>
 <% end %>
 
 <br />
 <%= link_to "Verwijder", @article, method: :delete, data: { confirm: "Weet je het zeker?" } %>
 <%= link_to "Bewerk", edit_article_path %>
+
+<%= render 'shared/tabbar' %>

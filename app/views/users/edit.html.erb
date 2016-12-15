@@ -1,6 +1,9 @@
-<%= link_to 'Vorige', 'javascript:history.go(-1);' %>
+<% @back_or_search = "back" %>
+<%= render 'shared/header' %>
 
 <% provide(:button_text, "Wijzigingen opslaan")%>
 <h1>Update je profiel</h1>
 
 <%= render 'form' %>
+
+<%= render 'shared/tabbar' %>

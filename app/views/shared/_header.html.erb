@@ -1,0 +1,7 @@
+<% if @back_or_search == "back" %>
+<%= link_to 'Vorige', 'javascript:history.go(-1);' %>
+<% elsif @back_or_search == "search" %>
+ZOEKEN
+<% end %>
+<%= link_to "Profiel", current_user%><br />
+__________________________________________________________________<br />

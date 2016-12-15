@@ -1,8 +1,7 @@
-<%= link_to 'Vorige', 'javascript:history.go(-1);' %>
+<% @back_or_search = "back" %>
+<%= render 'shared/header' %>
 
 Welkom, <%= @user.firstname %>.<br />
-<%= link_to "Ga naar artikelen", articles_path %><br/>
-<%= link_to "Favorieten", favorites_path %><br />
 <%= link_to "Account wijzigen", edit_user_path(current_user) %><br />
 <%= link_to "Uitloggen", logout_path, method: "delete" %><br />
 
@@ -10,3 +9,5 @@ Welkom, <%= @user.firstname %>.<br />
 <br /> Deze gebruiker is een admin. <br />
 <%= link_to "Gebruikersoverzicht", users_path %>
 <% end %>
+
+<%= render 'shared/tabbar' %>
