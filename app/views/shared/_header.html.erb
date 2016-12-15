@@ -1,7 +1,9 @@
 <% if @back_or_search == "back" %>
 <%= link_to 'Vorige', 'javascript:history.go(-1);' %>
 <% elsif @back_or_search == "search" %>
-ZOEKEN
+<%= form_tag(articles_path, :method => "get", id: "tag") do %>
+  <%= text_field_tag :tag, params[:tag], placeholder: "Zoek op tag.." %>
+<% end %>
 <% end %>
 <%= link_to "Profiel", current_user%><br />
 ______________________________________________________________________<br />

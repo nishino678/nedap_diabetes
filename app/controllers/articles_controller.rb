@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
    end
  end
 
- def show
+  def show
   @article = Article.find(params[:id])
 end
 
