@@ -1,0 +1,8 @@
+<%= form_for(@fact) do |f| %>
+  <%= f.text_field :title, placeholder: "Titel.." %>
+  <br />
+  <%= f.text_area :content, placeholder: "Uitleg.." %>
+  <br />
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+  <br />
+<% end %>

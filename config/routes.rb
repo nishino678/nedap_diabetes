@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   get 'favorites', to: 'users#favorites'
   get 'users/:id/favorites', to: 'users#favorites'
+  resources :facts
   resources :specialists
   resources :users
   resources :articles do

@@ -1,0 +1,21 @@
+<% @back_or_search = "back" %>
+<%= render 'shared/header' %>
+
+<% if current_user.admin? %>
+<%= link_to 'Feitje toevoegen', new_fact_path %>
+<% end %>
+
+<% @fact.each do |fact| %>
+<ul>
+  <h2><%= link_to fact.title, fact %></h2>
+
+  <% if current_user.admin? %>
+  <%= link_to 'Bewerk feitje', edit_fact_path(fact) %>
+  <%= link_to 'Verwijder feitje', fact, method: :delete,
+                                  data: { confirm: "Weet je het zeker?" } %>
+<br />_______________________________________________________
+  <% end %>
+</ul>
+<% end  %>
+
+<%= render 'shared/tabbar' %>
