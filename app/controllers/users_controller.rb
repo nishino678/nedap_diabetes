@@ -10,20 +10,33 @@ class UsersController < ApplicationController
     if logged_in?
       redirect_to articles_path
     else
-      @user = User.new
+      session[:user_params] ||= {}
+      @user = User.new(session[:user_params])
+      @user.current_step = session[:user_step]
     end
   end
 
   def create
-
-    @user = User.new(user_params)
-    if @user.save
+    session[:user_params].deep_merge!(params[:user]) if params[:user]
+    @user = User.new(session[:user_params])
+    @user.current_step = session[:user_step]
+    if @user.firstname.present?
+      if params[:back_button]
+        @user.previous_step
+      elsif @user.last_step?
+        @user.save if @user.valid?
+      else
+        @user.next_step
+      end
+      session[:user_step] = @user.current_step
+    end
+    if @user.new_record?
+      render "new"
+    else
+      session[:user_step] = session[:user_params] = nil
       log_in @user
       flash[:success] = "Account succesvol aangemaakt!"
       redirect_to @user
-      # Handle a successful save.
-    else
-      render 'new'
     end
   end
 

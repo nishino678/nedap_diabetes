@@ -1,13 +1,4 @@
-<% @back_or_search = "back" %>
-<%= render 'shared/header' %>
 
-<% provide(:button_text, "Wijzigingen opslaan")%>
-<h1>Update je profiel</h1>
-
-<%= form_for @user do |f| %>
 <%= f.email_field :email, placeholder: "Email.." %> <br />
 <%= f.password_field :password, placeholder: "Wachtwoord.." %> <br />
 <%= f.password_field :password_confirmation, placeholder: "Bevestig wachtwoord.." %> <br />
-<% end %>
-
-<%= render 'shared/tabbar' %>

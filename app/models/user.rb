@@ -1,5 +1,7 @@
 class User < ApplicationRecord
 	has_many :favorites
+  attr_writer :current_step
+
 
   attr_accessor :remember_token, :reset_token
 	before_save { email.downcase! }
@@ -65,4 +67,27 @@ class User < ApplicationRecord
     reset_sent_at < 2.hours.ago
   end
 
+  def current_step
+    @current_step || steps.first
+  end
+
+  def steps
+    %w[voornaam kennismaken email_pass]
+  end
+
+  def next_step
+    self.current_step = steps[steps.index(current_step)+1]
+  end
+
+  def previous_step
+    self.current_step = steps[steps.index(current_step)-1]
+  end
+
+  def first_step?
+    current_step == steps.first
+  end
+
+  def last_step?
+    current_step == steps.last
+  end
 end
