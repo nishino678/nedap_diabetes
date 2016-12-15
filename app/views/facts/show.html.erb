@@ -1,7 +1,7 @@
 <% @back_or_search = "back" %>
 <%= render 'shared/header' %>
 
-<% provide(:button_text, 'Wijzigingen opslaan') %>
-<%= render 'form' %>
+<h2><%= @fact.title %></h2><br />
+<%= @fact.content %>
 
 <%= render 'shared/tabbar' %>
