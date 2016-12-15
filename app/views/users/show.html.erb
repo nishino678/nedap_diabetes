@@ -1,7 +1,7 @@
 <% @back_or_search = "back" %>
 <%= render 'shared/header' %>
 
-Welkom, <%= @user.firstname %>.<br />
+<br />Welkom, <%= @user.firstname %>.<br />
 <%= link_to "Account wijzigen", edit_user_path(current_user) %><br />
 <%= link_to "Uitloggen", logout_path, method: "delete" %><br />
 
