@@ -1,6 +1,10 @@
 <% @back_or_search = "back" %>
 <%= render 'shared/header' %>
 
+<% @article.tags.each do |tag| %>
+<%= link_to tag.name, tag_path(tag.name) %>
+<% end %>
+
 <ul><h2><%= @article.title %></h2></ul>
 <ul>geschreven door: <%= @article.author %></ul>
 <ul><%= @article.content %></ul>

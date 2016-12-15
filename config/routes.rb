@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   get 'favorites', to: 'users#favorites'
   get 'users/:id/favorites', to: 'users#favorites'
+  get 'tags/:tag', to: 'articles#index', as: 'tag'
+  resources :tags
   resources :facts
   resources :specialists
   resources :users
