@@ -17,13 +17,13 @@ User.create!(
 Specialist.create!(
   name:  "Arnold Schwarzenegger",
   profession: "Man of the year",
-  bio: "Arnold Schwarzenegger first gained fame as a body builder, using that as a launching point to become a huge Hollywood star and, later, the governor of California."
+  bio: "Arnold Schwarzenegger werd geboren in Thal vlak bij de Oostenrijkse stad Graz. Zijn vader Gustav, een voormalig lid van de Sturmabteilung, was het hoofd van de plaatselijke politie en overleed op 1 december 1972. Zijn moeder Aurelia overleed op 2 augustus 1998. Arnold had een oudere broer Meinhard, geboren op 17 juli 1946 en gestorven bij een auto-ongeluk op 20 mei 1971. Arnold heeft als dienstplichtig militair in 1965 een jaar gediend in het Oostenrijkse leger als tankchauffeur. Hij werd Amerikaans staatsburger in 1983 en haalde een Bachelors graad aan de Universiteit van Wisconsin in International Marketing en Business Administration."
  )
 
 Specialist.create!(
-  name:  "Sasha Grey",
-  profession: "Hole of the world",
-  bio: "Sasha Grey, pseudoniem van Marina Ann Hantzis, (Sacramento (Californië), 14 maart 1988) is een Amerikaans voormalig pornoactrice die in 2009 haar debuut maakte als hoofdrolspeelster in een mainstreamfilm. Steven Soderbergh gaf haar destijds een hoofdrol in The Girlfriend Experience"
+  name:  "Nelson Mandela",
+  profession: "Zuid-Afrikaans anti-apartheidsstrijder en politicus",
+  bio: "Vanaf 1944 was Mandela betrokken bij de strijd van het Afrikaans Nationaal Congres (ANC) tegen het apartheidsregime in Zuid-Afrika. Als leider van de militaire tak van het ANC werd hij in 1963 opgepakt en kreeg hij een levenslange gevangenisstraf opgelegd. In 1990 kwam hij vrij en werd het ANC gelegaliseerd. Samen met president F.W. de Klerk kreeg Mandela in 1993 de Nobelprijs voor de Vrede voor hun inspanningen voor het vreedzaam einde van het apartheidsregime en het leggen van de funderingen voor een nieuw democratisch Zuid-Afrika."
  )
 
 Article.create!(
@@ -33,21 +33,21 @@ Article.create!(
   source: "NU.nl",
   specialist_id: "1",
   all_tags: "noten, hartziekten, kanker, diabetes",
-  explanation: "Noten zijn geweldig voor je okselhaar.",
+  explanation: "Noten zijn geweldig voor je. Dit artikel is helemaal waar!",
 
   questions_attributes: [
   {
-     content: 'Q1',
+     content: 'Eerste vraag bij artikel.',
      answers_attributes: [
-       {content: "Q1A1",
+       {content: "Eerste antwoord",
         correct: true},
-       {content: "Q1A2"},
-       {content: "Q1A3"}
+       {content: "Tweede antwoord"},
+       {content: "Derde antwoord"}
      ]
    },
 
    {
-     content: 'Q2',
+     content: 'Tweede vraag bij artikel.',
      answers_attributes: [
        {content: "Q2A1"},
        {content: "Q2A2",
@@ -57,7 +57,7 @@ Article.create!(
    },
 
    {
-     content: 'Q1',
+     content: 'Derde vraag bij artikel.',
      answers_attributes: [
        {content: "Q3A1"},
        {content: "Q3A2"},

@@ -1,21 +1,24 @@
 <% @back_or_search = "back" %>
 <%= render 'shared/header' %>
 
-<% @article.tags.each do |tag| %>
-<%= link_to tag.name, tag_path(tag.name) %>
-<% end %>
+
 
 <ul><h2><%= @article.title %></h2></ul>
 <ul>geschreven door: <%= @article.author %></ul>
 <ul><%= @article.content %></ul>
 <ul>bron: <%= @article.source %></ul>
 
-<ul><h2>Vragen en antwoorden</h2></ul>
-<ul><h2>Antwoorden</h2></ul>
+<ul> Tags bij dit artikel:
+<% @article.tags.each do |tag| %>
+<%= link_to tag.name, tag_path(tag.name) %>
+<% end %> </ul>
+
+<ul><h2>Vragen bij dit artikel</h2></ul>
 
 <ul>
 <% for x in 0..2 %>
   <%= question_content(x) %><br />
+  <b>Antwoorden</b><br />
   <% for i in 0..2 %>
     <%= question_answer(x, i) %>
     <%= question_answer_correct?(x, i) %><br />
