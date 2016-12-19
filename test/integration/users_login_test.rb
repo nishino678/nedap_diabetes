@@ -44,22 +44,6 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", specialists_path
   end
 
-  test "logged in user can't get specialists path" do
-    log_in_as(@user, remember_me: '0')
-    get specialists_path
-    assert_redirected_to root_url
-    follow_redirect!
-    assert_redirected_to articles_path
-  end
-
-  test "logged in user can't get add article path" do
-    log_in_as(@user, remember_me: '0')
-    get new_article_path
-    assert_redirected_to root_url
-    follow_redirect!
-    assert_redirected_to articles_path
-  end
-
   test "login with remembering" do
     #login and set cookie
     log_in_as(@user, remember_me: '1')

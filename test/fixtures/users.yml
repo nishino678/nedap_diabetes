@@ -4,6 +4,12 @@ example:
   password_digest: <%= User.digest('password') %>
   admin: false
 
+example1:
+  firstname: ExampleUser1
+  email: user1@example.com
+  password_digest: <%= User.digest('password') %>
+  admin: false
+
 admin:
   firstname: AdminUser
   email: admin@user.com
