@@ -45,7 +45,9 @@
 <% end %>
 
 <br />
+<% if current_user.admin? %>
 <%= link_to "Verwijder", @article, method: :delete, data: { confirm: "Weet je het zeker?" } %>
 <%= link_to "Bewerk", edit_article_path %>
+<% end %>
 
 <%= render 'shared/tabbar' %>
