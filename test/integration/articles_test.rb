@@ -21,7 +21,14 @@ test "non admin can't see add article and specialist button" do
     assert_select "a[href=?]", specialists_path
   end
 
-test "show article as user without delete and edit buttons" do
+  test "admin can edit article" do
+    log_in_as(@admin)
+    @article = create(:article_with_questions)
+    get edit_article_path(@article)
+    assert_template 'articles/edit'
+  end
+
+  test "show article as user without delete and edit buttons" do
     log_in_as(@user)
     @article = create(:article_with_questions)
     get article_path(@article)
@@ -37,5 +44,4 @@ test "show article as user without delete and edit buttons" do
     assert_select  'a[href=?]', edit_article_path(@article)
     assert_select 'a[href=?]', article_path(@article), text: 'Verwijder'
   end
-
 end
