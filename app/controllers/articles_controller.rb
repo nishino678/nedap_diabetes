@@ -68,8 +68,8 @@ end
 def logged_in_user
   unless logged_in?
     store_location
-    flash[:danger] = "Log eerst in."
-    redirect_to login_url
+    flash[:danger] = "Meld je aan of log in om verder te gaan."
+    redirect_to root_url
   end
 end
 end

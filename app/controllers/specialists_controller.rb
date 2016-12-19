@@ -1,5 +1,6 @@
 class SpecialistsController < ApplicationController
 before_action :admin_user,     only: [:new, :edit, :destroy, :index, :show]
+before_action :logged_in_user
 
   def new
     @specialist = Specialist.new
