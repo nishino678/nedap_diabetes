@@ -30,11 +30,15 @@ class RedirectionTestTest < ActionDispatch::IntegrationTest
     assert_redirected_to articles_path
   end
 
-  test "logged in show article article" do
+  test "logged in user can view article, logged out cant" do
     log_in_as(@user)
     @article = create(:article_with_questions)
     get article_path(@article)
-    assert_response :success
+    assert_template "articles/show"
+    delete logout_path
+    assert_redirected_to root_url
+    get articles_path(@article)
+    assert_redirected_to root_url
   end
 
   test "not logged in redirects" do
