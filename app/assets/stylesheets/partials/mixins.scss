@@ -1,0 +1,9 @@
+$box-shadow: rgba(0,0,0,.5);
+@mixin box-shadow(
+    $hPos: 0,
+    $vPos: 1px,
+    $blur: 2px
+  ){
+    box-shadow: $hPos $vPos $blur $box-shadow;
+    -moz-box-shadow: $hPos $vPos $blur $box-shadow;
+}
