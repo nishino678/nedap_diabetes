@@ -6,6 +6,26 @@ def setup
   @admin = users(:admin)
 end
 
+  test "search with no tag given" do
+    log_in_as(@user)
+    get articles_path, params: { tag: " " }
+    assert_response :success
+  end
+
+  test "search with known tag given" do
+    log_in_as(@user)
+    create(:article)
+    get articles_path, params: { tag: "testtag" }
+    assert_response :success
+  end
+
+  test "search with unknown tag given" do
+    log_in_as(@user)
+    create(:article)
+    get articles_path, params: { tag: "unknown" }
+    assert_redirected_to articles_path
+  end
+
   test "logged in user can view article, logged out cant" do
     log_in_as(@user)
     @article = create(:article_with_questions)

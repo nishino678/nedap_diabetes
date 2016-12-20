@@ -19,6 +19,11 @@ class Article < ApplicationRecord
   end
 
   def self.tagged_with(name)
-    Tag.find_by(name: name).articles
+    if Tag.find_by(name: name).present?
+      Tag.find_by(name: name).articles
+    else
+      Tag.find(name: name).articles
+    end
+
   end
 end
