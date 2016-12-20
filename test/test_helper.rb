@@ -28,4 +28,14 @@ class ActionDispatch::IntegrationTest
                                           password: password,
                                           remember_me: remember_me } }
   end
+
+  def double_redirect
+    follow_redirect!
+    follow_redirect!
+  end
+
+  def assert_success(path)
+    get path
+    assert_response :success
+  end
 end

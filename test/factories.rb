@@ -1,4 +1,10 @@
 FactoryGirl.define do
+
+  factory :fact do
+    title "testfact"
+    content "testcontent"
+  end
+
   factory :specialist do
     name "henk"
     profession "professional henk"
@@ -12,6 +18,7 @@ FactoryGirl.define do
     source "test"
     specialist_id "1"
     explanation "testexplanation"
+    all_tags "testtag, tag"
     specialist
     factory :article_with_questions do
       transient do
@@ -36,5 +43,12 @@ FactoryGirl.define do
 
   factory :answer do
     content "testanswer"
+  end
+
+  factory :user do
+    firstname "testanswer"
+    email "test@email.com"
+    password "password"
+    password_confirmation "password"
   end
 end

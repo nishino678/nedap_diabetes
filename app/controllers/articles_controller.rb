@@ -59,9 +59,8 @@ def news_params
   params.require(:article).permit(:all_tags, :id, :specialist_id, :explanation, :title, :author, :content, :source,
     specialists_attributes: [:id],
     questions_attributes: [:id, :content, :article_id,
-      answers_attributes: [:id, :content, :correct
+      answers_attributes: [:id, :content, :correct]
       ]
-    ]
     )
 end
 
