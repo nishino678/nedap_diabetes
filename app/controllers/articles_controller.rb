@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :logged_in_user, only: [:show, :index]
   before_action :admin_user,     only: [:new, :edit, :destroy]
-  around_action :catch_not_found
+
 
   def new
     @article = Article.new
@@ -16,12 +16,14 @@ class ArticlesController < ApplicationController
 end
 
 def index
-  @article = if params[:tag].present?
+  @article = if params[:tag]
   Article.tagged_with(params[:tag]).order('created_at DESC')
+
 else
-  #flash[:error] = "Vul een tag in voor je zoekt."
   @article = Article.all.order('created_at DESC')
 end
+ rescue NoMethodError
+    redirect_to articles_path, :flash => { :error => "Geen artikel gevonden met deze tag." }
 end
 
 def edit
