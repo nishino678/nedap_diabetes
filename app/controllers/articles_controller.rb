@@ -17,7 +17,7 @@ end
 
 def index
   @article = if params[:tag]
-  Article.tagged_with(params[:tag]).order('created_at DESC')
+  Article.tagged_with(params[:tag].downcase).order('created_at DESC')
 
 else
   @article = Article.all.order('created_at DESC')
