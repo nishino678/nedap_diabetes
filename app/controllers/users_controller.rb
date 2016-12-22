@@ -24,6 +24,10 @@ class UsersController < ApplicationController
     if @user.firstname.present?
       if params[:back_button]
         @user.previous_step
+      elsif @user.current_step == 'email_pass'
+        if @user.valid?
+          @user.next_step
+        end
       elsif @user.last_step?
         @user.save if @user.valid?
       else
@@ -37,7 +41,7 @@ class UsersController < ApplicationController
       session[:user_step] = session[:user_params] = nil
       log_in @user
       flash[:success] = "Account succesvol aangemaakt!"
-      redirect_to @user
+      redirect_to @article
     end
   end
 
