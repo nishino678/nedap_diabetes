@@ -1,5 +1,16 @@
 $basecopy: 16px;
 
+@font-face {
+  font-family: 'floor-font';
+  src:font-url('floor-font.eot?#iefix') format('embedded-opentype'),
+      font-url('floor-font.svg#floor-font') format('svg'),
+      font-url('floor-font.woff') format('woff'),
+      font-url('floor-font.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  // ✓
+}
+
 html,body{
   font-family:'Open Sans', sans-serif;
   font-size: $basecopy; //in rem zetten//

@@ -1,0 +1,22 @@
+.tabbar{
+width:100%;
+background:red;
+height:50px;
+
+
+  .tabs{
+    width:calc(100/3);
+    text-decoration:none;
+    font:{
+      family: "Open Sans", sans-serif;
+      size:13px;
+      color:$textcolor;
+    }
+  }
+
+  .facts{}
+
+  .article{}
+
+  .diaclopedie{}
+}
