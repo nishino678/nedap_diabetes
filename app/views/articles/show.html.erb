@@ -2,8 +2,10 @@
 <%= render 'shared/header' %>
 
 
-
 <ul><h2><%= @article.title %></h2></ul>
+
+<ul><%= image_tag @article.article_image.url(:medium) %></ul>
+
 <ul>geschreven door: <%= @article.author %></ul>
 <ul><%= @article.content %></ul>
 <ul>bron: <%= @article.source %></ul>

@@ -1,3 +1,6 @@
+image_path = "#{Rails.root}/test.jpg"
+image_file = File.new(image_path)
+
 User.create!(
   firstname:  "Henk",
   email: "henk@devries.nl",
@@ -27,6 +30,7 @@ Specialist.create!(
  )
 
 Article.create!(
+  article_image: File.open(File.join(Rails.root, 'db', 'seed_images', 'notenmix.jpg')),
   title: "Handvol noten verlaagt kans op hartziekten, kanker en diabetes type 2",
   author: "John Doe",
   content: "Mensen die 20 gram noten per dag eten hebben 30 procent minder kans op hart- en vaatziekten dan mensen die geen noten eten. Daarbij hebben ze 15 procent minder kans op kanker en 22 procent minder kans op vroegtijdig overlijden. Dit blijkt uit onderzoek van BMC Medicine. Hiervoor werden 29 studies met daarin informatie van 800.000 mensen geanalyseerd. Bovendien hadden de mensen die noten aten de helft minder kans te overlijden aan luchtwegaandoeningen en een verminderd risico (40 procent) op diabetes type 2.Gezonde vetten Noten zorgen voor deze effecten doordat ze veel vezels, voedingsstoffen en antioxidanten bevatten. Daarbij bevatten ze gezonde vetten die bijdragen aan het verminderen van hartaandoeningen. Hun hoge vezel- en eiwitgehalte kan ook bijdragen tot het verminderen van extra gewichtstoename door het terugdringen van overeten. De antioxidanten kunnen kanker helpen verminderen. De resultaten van de onderzoeken bleven consistent in verschillende geografische gebieden en bij mannen en vrouwen. Daarbij is er geen verschil in soort noot te zien. Bij mensen die meer dan 20 gram noten eten bleken er geen extra voordelen te zijn.",
@@ -69,6 +73,7 @@ Article.create!(
 )
 
 Article.create!(
+  article_image: File.open(File.join(Rails.root, 'db', 'seed_images', 'dt2.jpg')),
   title: "Nieuwe behandeling voor diabetes type 2",
   author: "Dirk Bruinbroek",
   content: "Vanaf 2017 is er een nieuwe behandeling voor volwassenen met diabetes type 2. Het middel is een combinatie van een langwerkende insuline en een GLP-1 receptoragonist en hoeft maar een keer per dag toegediend te worden.
