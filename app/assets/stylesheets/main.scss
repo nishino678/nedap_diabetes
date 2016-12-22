@@ -1,4 +1,11 @@
-@import "../stylesheets/partials/mixins.scss";
+@import "../stylesheets/vendors/reset.scss";
+
+@import "../stylesheets/modules/mixins.scss";
 @import "../stylesheets/modules/colors.scss";
-@import "../stylesheets/partials/typography.scss";
+@import "../stylesheets/modules/typography.scss";
+
+@import "../stylesheets/layout/base.scss";
+
 @import "../stylesheets/partials/buttons.scss";
+@import "../stylesheets/partials/article.scss";
+@import "../stylesheets/partials/checkbox.scss";
