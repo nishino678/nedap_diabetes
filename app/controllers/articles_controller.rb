@@ -17,6 +17,7 @@ end
 
 def index
   @article = if params[:tag]
+  flash.clear
   Article.tagged_with(params[:tag].downcase).order('created_at DESC')
 
 else
