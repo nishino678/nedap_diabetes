@@ -69,7 +69,7 @@ class User < ApplicationRecord
   end
 
   def steps
-    %w[voornaam kennismaken email_pass]
+    %w[voornaam kennismaken email_pass bevestiging]
   end
 
   def next_step
