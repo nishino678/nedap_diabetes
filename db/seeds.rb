@@ -1,6 +1,3 @@
-image_path = "#{Rails.root}/test.jpg"
-image_file = File.new(image_path)
-
 User.create!(
   firstname:  "Henk",
   email: "henk@devries.nl",

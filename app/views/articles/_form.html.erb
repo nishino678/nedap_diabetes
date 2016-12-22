@@ -5,7 +5,7 @@
 
 <%= render 'shared/error_messages_article' %>
 <h1> Nieuw bericht toevoegen</h1>
-<%= content.file_field :article_image %>
+<%= content.file_field :article_image %><br />
 <%= content.text_field :title, placeholder: 'Berichttitel..' %><br />
 <%= content.text_field :author, placeholder: 'Auteur..' %><br />
 <%= content.text_area :content, placeholder: 'Origineel nieuwsbericht..' %><br />
