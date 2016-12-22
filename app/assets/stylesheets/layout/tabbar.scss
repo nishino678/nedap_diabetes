@@ -5,13 +5,18 @@ height:50px;
 
 
   .tabs{
-    width:calc(100/3);
-    text-decoration:none;
+    display:block;
+    width:calc(100%/3);
+    text:{
+      decoration: none;
+      align: center;
+    }
     font:{
       family: "Open Sans", sans-serif;
       size:13px;
       color:$textcolor;
     }
+    float:left;
   }
 
   .facts{}
