@@ -2,14 +2,14 @@
 <%= render 'shared/header' %>
 
 <h1>Artikelen</h1>
-____________________________________________________________________
+
 <% @article.each do |article| %>
 <ul><h2>
   <%= image_tag article.article_image.url(:medium) %>
   <%= link_to article.title, article %>
   <%= article.created_at.strftime("%e-%m") %>
 </h2></ul>
-____________________________________________________________________
+
 <% end %>
 <br />
 <% if current_user.admin? %>
@@ -17,4 +17,10 @@ ____________________________________________________________________
 <%= link_to "Beheer specialisten", specialists_path %>
 <% end %>
 
+<div class="action-section">
+  <div class="checkbox">
+    <input type="checkbox" value="None" id="squaredFour" name="check" checked />
+    <label class="label basecopy-negative" for="squaredFour">Onthoud mij</label>
+  </div>
+</div>
 <%= render 'shared/tabbar' %>

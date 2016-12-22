@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Rubik:400,500');
+
+
+
+//components
+$checkbox: $barbie;
+$highlight: $barbie;
+$highlight-wrong: $barbie;
+$highlight-right: $blueberry;
+
+$action-section: rgba(#4d58b4,.85);
+
+$box-shadow: rgba(0,0,0,.5);
+
+@mixin action-section2 {
+  height:30px;
+  background-color:rgba(#4d58b4,.85);
+}
+
+// delete!!!
+.container {
+  display:block;
+  max-width: 320px;
+  padding: 20px 10px;
+  margin: 0 auto;
+  box-shadow: 0 1px 3px #333;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a{
+  color:$highlight;
+}
+
+//components
+.action-section{
+  @include action-section2;
+}
+
+//bron componant
+.article-source{
+  font-size:14px;
+  line-height:17px;
+}
+
+//input fields
+input {
+  display: block;
+  width: 100%;
+  padding:5px 20px 5px 40px;
+  // border: 5px solid $white;
+  border: 1px solid $white;
+  border-radius:30px;
+  outline: none;
+  font-size:$basecopy;
+  @include box-shadow();
+  margin: 0 0 10px 0 ;
+  background-color:$white;
+
+  &.wrong {
+    border-color:$highlight-wrong;
+  }
+
+  &.right {
+    border-color:$highlight-right;
+  }
+}
+
+//checkbox
+.checkbox {
+  position: relative;
+
+  label {
+    width: calc(100% - 30px);
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 30px;
+
+    &:after {
+      content: '';
+      width: 9px;
+      height: 5px;
+      position: absolute;
+      top: 9px;
+      left: -25px;
+      border: 3px solid #FF93B6;
+      border-top: none;
+      border-right: none;
+      opacity: 0;
+      transform: rotate(-45deg);
+      display: inline-block;
+    }
+    &:before{
+      content: "";
+      display: inline-block;
+      border: 2px solid $patrick;
+      border-radius:4px;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 3px;
+      left: -30px;
+    }
+  }
+
+  input[type=checkbox] {
+    visibility: hidden;
+    &:checked + label:after {
+      opacity: 1;
+    }
+  }
+}
+
+//header
+.header{
+  position:fixed;
+  z-index:999;
+  height:40px;
+  width:100%;
+  background-color:$purplerain;
+}
+
+.logo{
+  margin: auto;
+}

@@ -1,0 +1,23 @@
+.button{
+  display:inline-block;
+  width: 100%;
+  padding:10px 20px;
+  border-radius:30px;
+
+  font:{
+    family: 'Rubik',sans-serif;
+    weight: 500;
+    size:18px;
+  }
+  text-align:center;
+  @include box-shadow();
+
+  &-blue{
+    background:$blueberry;
+    color:$white;
+  }
+  &-white{
+    background:$white;
+    color:$blueberry;
+  }
+}
