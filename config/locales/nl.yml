@@ -2,17 +2,25 @@
 nl:
   activerecord:
     attributes:
+      fact:
+        title: titel
+        content: inhoud
+      user:
+        firstname: voornaam
+        email: email
+        password: wachtwoord
+        password_confirmation: bevestiging
       article:
-        content: Artikel inhoud
-        title: Titel
-        all_tags: Tag
-        author: Auteur
-        explanation: Uitleg specialist
-        source: Bron
+        content: artikel inhoud
+        title: titel
+        all_tags: tag
+        author: auteur
+        explanation: uitleg specialist
+        source: bron
       questions:
-        content: Vraag
+        content: vraag
       questions/answers:
-        content: Antwoord op vraag
+        content: antwoord op vraag
     errors:
       messages:
         record_invalid: 'Validatie mislukt: %{errors}'

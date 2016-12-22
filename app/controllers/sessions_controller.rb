@@ -14,8 +14,13 @@ class SessionsController < ApplicationController
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
       redirect_back_or articles_path
     else
-      flash.now[:danger] = 'Invalid email/password combination'
-      render 'new'
+      if user && User.find_by(email: params[:session][:email].downcase)
+        flash.now[:danger] = 'Ongeldig wachtwoord.'
+        render 'new'
+      else
+        flash.now[:danger] = 'Gebruiker niet gevonden.'
+        render 'new'
+      end
     end
    end
 

@@ -16,7 +16,6 @@ class FactsController < ApplicationController
       redirect_to @fact
       flash[:succes] = "Feitje aangemaakt."
     else
-      flash.now[:danger] = @fact.errors.messages
       render 'new'
     end
   end
