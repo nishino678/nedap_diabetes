@@ -1,6 +1,18 @@
 ---
 nl:
   activerecord:
+    attributes:
+      article:
+        content: Artikel inhoud
+        title: Titel
+        all_tags: Tag
+        author: Auteur
+        explanation: Uitleg specialist
+        source: Bron
+      questions:
+        content: Vraag
+      questions/answers:
+        content: Antwoord op vraag
     errors:
       messages:
         record_invalid: 'Validatie mislukt: %{errors}'
