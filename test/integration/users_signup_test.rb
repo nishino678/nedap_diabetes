@@ -31,10 +31,12 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
       assert_template 'users/_kennismaken_step'
       post signup_path, params: { user: { } }
       assert_template 'users/_email_pass_step'
-      post signup_path, params: { user: { email: "shanky@example.com", password:              "password", password_confirmation: "password" } }
+      post signup_path, params: { user: { email: "shanky@example.com", password: "password", password_confirmation: "password" } }
+      assert_template 'users/_bevestiging_step'
+      post signup_path, params: { user: { } }
     end
     follow_redirect!
-    assert_template 'users/show'
+    assert_template 'articles/index'
     assert_not flash.empty?
     assert is_logged_in?
   end
