@@ -12,6 +12,7 @@ FactoryGirl.define do
   end
 
   factory :article do
+    article_image File.open(File.join(Rails.root, 'db', 'seed_images', 'notenmix.jpg'))
     title "test"
     content "test"
     author "test"
