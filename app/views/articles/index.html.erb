@@ -4,19 +4,19 @@
 <h1>Artikelen</h1>
 
 <% @article.each do |article| %>
-<div class="article">
-  <header>
-    <h2 class="">
-      <%= link_to article.title, article, class:"title" %>
-      <!-- <%= article.created_at.strftime("%e-%m") %> -->
-    </h2>
-  </header>
-</div>
-
+  <div class="article">
+    <header>
+      <h2 class="">
+        <%= link_to article.title, article, class:"title" %>
+        <!-- <%= article.created_at.strftime("%e-%m") %> -->
+      </h2>
+    </header>
+  </div>
 <% end %>
+
 <% if current_user.admin? %>
-<%= link_to "Nieuw artikel", new_article_path %>
-<%= link_to "Beheer specialisten", specialists_path %>
+  <%= link_to "Nieuw artikel", new_article_path %>
+  <%= link_to "Beheer specialisten", specialists_path %>
 <% end %>
 
 <div class="action-section">
