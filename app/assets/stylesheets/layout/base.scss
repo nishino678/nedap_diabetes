@@ -4,9 +4,7 @@ html, body {
 }
 
 .container {
-  display:block;
-  margin: 0 auto 50px;
-  box-shadow: 0 1px 3px #333;
+  margin: 0 0 50px;
 }
 
 *,
@@ -25,5 +23,6 @@ pre.debug_dump{
 }
 
 @media (min-width:500px) {
-  .container{display: none;}
+  .mobile{display: none;}
+  .desktop{display:block;}
 }
