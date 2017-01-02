@@ -1,5 +1,25 @@
-<div class="tabbar">
-  <%= link_to "Favorieten", favorites_path, class: "tabs"  %>
-  <%= link_to "Artikelen", articles_path, class: "tabs" %>
-  <%= link_to "Diaclopedie", facts_path, class: "tabs"  %>
-</div>
+
+<nav class="tabbar">
+  <ul>
+    <li class="tabs">
+      <%= link_to favorites_path  do %>
+          <span class="icon">e</span>
+          <span>Favorieten</span>
+      <% end %>
+    </li>
+
+    <li class="tabs">
+      <%= link_to articles_path  do %>
+          <span class="icon">c</span>
+          <span>Artikelen</span>
+      <% end %>
+    </li>
+
+    <li class="tabs active">
+      <%= link_to facts_path  do %>
+          <span class="icon">d</span>
+          <span>Diaclopedie</span>
+      <% end %>
+    </li>
+  </ul>
+</nav>

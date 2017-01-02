@@ -1,8 +1,11 @@
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
 .container {
   display:block;
-  max-width: 320px;
-  // padding: 20px 10px;
-  margin: 0 auto;
+  margin: 0 auto 50px;
   box-shadow: 0 1px 3px #333;
 }
 
@@ -10,4 +13,17 @@
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+a{
+  color:$textcolor;
+  text-decoration:none;
+}
+
+pre.debug_dump{
+  display: none;
+}
+
+@media (min-width:500px) {
+  .container{display: none;}
 }
