@@ -1,19 +1,33 @@
 .header{
+  position:fixed;
   z-index:999;
   height:40px;
   width:100%;
-  background-color:$purplerain;
+  background-color: $header;
   display:flex;
   justify-content:space-between;
   align-items:center;
+  @include box-shadow;
 
-  .icon a{
+  .icon{
     color:$white;
     text-decoration: none;
-
+    padding: 0 20px 0 20px;
     font:{
       family: "floor-font";
       size: 25px;
     }
   }
+}
+
+.logo{
+  color:$white;
+}
+
+.search-bar{
+  width:100%;
+  position: fixed;
+  top:40px;
+  background-color: $subheader;
+
 }
