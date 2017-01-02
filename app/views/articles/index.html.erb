@@ -4,25 +4,17 @@
 <h1>Artikelen</h1>
 
 <% @article.each do |article| %>
-  <div class="article">
+  <article class="news-article">
     <header>
-      <h2 class="">
+      <h2 class="title">
         <%= link_to article.title, article, class:"title" %>
         <!-- <%= article.created_at.strftime("%e-%m") %> -->
       </h2>
     </header>
-  </div>
+  </article>
 <% end %>
 
 <% if current_user.admin? %>
   <%= link_to "Nieuw artikel", new_article_path %>
   <%= link_to "Beheer specialisten", specialists_path %>
 <% end %>
-
-<div class="action-section">
-  <div class="checkbox">
-    <input type="checkbox" value="None" id="squaredFour" name="check" checked />
-    <label class="label basecopy-negative" for="squaredFour">Onthoud mij</label>
-  </div>
-</div>
-<%= render 'shared/tabbar' %>

@@ -5,5 +5,4 @@ $box-shadow: rgba(0,0,0,.5);
     $blur: 2px
   ){
     box-shadow: $hPos $vPos $blur $box-shadow;
-    -moz-box-shadow: $hPos $vPos $blur $box-shadow;
 }

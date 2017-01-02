@@ -1,9 +1,15 @@
-<div class="header"><% if @back_or_search == "back" %>
+<header class="header">
+  <%= link_to "j", current_user, class: "icon"  %>
+  <span class="logo">Floor</span>
+  <%= link_to "h", current_user, class: "icon"  %>
+</header>
+
+<div class="search-bar">
+  <% if @back_or_search == "back" %>
   <%= link_to 'Vorige', 'javascript:history.go(-1);' %>
   <% elsif @back_or_search == "search" %>
   <%= form_tag(articles_path, :method => "get", id: "tag") do %>
-    <%= text_field_tag :tag, params[:tag], placeholder: "Zoek op tag.." %>
+    <%= text_field_tag :tag, params[:tag], placeholder: "Zoek een artikel.." %>
   <% end %>
   <% end %>
-  <%= link_to "Profiel", current_user%>
 </div>
