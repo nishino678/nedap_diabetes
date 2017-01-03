@@ -1,6 +1,9 @@
 <header class="header">
   <% if @back_or_search == "back" %>
+  <span>
+    <%= link_to 'a', 'javascript:history.go(-1);', class:"icon" %>
     <%= link_to 'Terug', 'javascript:history.go(-1);' %>
+  </span>
   <% elsif @back_or_search == "search" %>
     <span class="icon">j</span>
   <% end %>

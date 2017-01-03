@@ -5,17 +5,22 @@
 <%= link_to 'Feitje toevoegen', new_fact_path %>
 <% end %>
 
-<% @fact.each do |fact| %>
-<ul>
-  <h2><%= link_to fact.title, fact %></h2>
+<h1 class="page-title">Alles wat je moet weten over diabetes type-II</h1>
 
-  <% if current_user.admin? %>
-  <%= link_to 'Bewerk feitje', edit_fact_path(fact) %>
-  <%= link_to 'Verwijder feitje', fact, method: :delete,
-                                  data: { confirm: "Weet je het zeker?" } %>
-  <% end %>
-  <br />_______________________________________________________
+<ul>
+  <% @fact.each do |fact| %>
+
+    <li class="fact">
+      <p><%= link_to fact.title, fact %></p>
+      <span class="icon">b</span>
+
+      <% if current_user.admin? %>
+        <%= link_to 'Bewerk feitje', edit_fact_path(fact) %>
+        <%= link_to 'Verwijder feitje', fact, method: :delete,
+          data: { confirm: "Weet je het zeker?" } %>
+      <% end %>
+    </li>
+  <% end  %>
 </ul>
-<% end  %>
 
 <%= render 'shared/tabbar' %>
