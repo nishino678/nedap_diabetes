@@ -54,16 +54,3 @@ input {
     border-color:$highlight-right;
   }
 }
-
-//header
-.header{
-  position:fixed;
-  z-index:999;
-  height:40px;
-  width:100%;
-  background-color:$purplerain;
-}
-
-.logo{
-  margin: auto;
-}

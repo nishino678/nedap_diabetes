@@ -10,8 +10,8 @@
   </head>
 
   <body>
-    <div class="mobile">
-      <div class="container">
+    <main>
+      <div class="main">
           <% flash.each do |message_type, message| %>
             <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
           <% end %>
@@ -20,6 +20,6 @@
       </div>
 
       <%= render 'shared/tabbar' %>
-    </div>
+    </main>
   </body>
 </html>

@@ -2,40 +2,41 @@
 <%= render 'shared/header' %>
 
 
+<div class="container">
+  <h2><%= @article.title %></h2>
+  <p>geschreven door: <%= @article.author %></p>
+  <p><%= @article.content %></p>
+</div>
 
-<ul><h2><%= @article.title %></h2></ul>
-<ul>geschreven door: <%= @article.author %></ul>
-<ul><%= @article.content %></ul>
-<ul>bron: <%= @article.source %></ul>
+<div class="quiz">
+  <div class="question">
+    <h2 class="quiz-text">Vragen bij dit artikel</h2>
+    <ul>
+    <% for x in 0..2 %>
+      <li class="basecopy-negative">
+        <%= question_content(x) %>
+      </li>
+    <% end %>
+    </ul>
+  </div>
 
-<ul> Tags bij dit artikel:
-<% @article.tags.each do |tag| %>
-<%= link_to tag.name, tag_path(tag.name) %>
-<% end %> </ul>
+  <ul class="answers">
+      <% for i in 0..2 %>
+        <li class="answer">
+            <%= question_answer(x, i) %>
+            <%= question_answer_correct?(x, i) %>
+        </li>
+      <% end %>
+  </ul>
 
-<ul><h2>Vragen bij dit artikel</h2></ul>
+</div>
 
 <ul>
-<% for x in 0..2 %>
-  <%= question_content(x) %><br />
-  <b>Antwoorden</b><br />
-  <% for i in 0..2 %>
-    <%= question_answer(x, i) %>
-    <%= question_answer_correct?(x, i) %><br />
-  <% end %>
-  <br />
-<% end %>
-</ul>
-
-<ul><h2>Uitleg van de specialist</h2></ul>
-
-<ul>
-<b>Advies van: </b><%= @article.specialist.name %> <br />
-<br />
-<ul> <%= @article.explanation %> </ul>
-<br />
-<b>Beroep specialist: </b><%= @article.specialist.profession %> <br /><br />
-<b>Over de specialist: </b><%= @article.specialist.bio %><br />
+  <li><h2>Uitleg van de specialist</h2></li>
+  <li>Advies van: <%= @article.specialist.name %></li>
+  <li>Beroep specialist: <%= @article.specialist.profession %></li>
+  <li><%= @article.explanation %></li>
+  <li>Over de specialist: </b><%= @article.specialist.bio %></li>
 </ul>
 
 <% if current_user.favorited?(@article) %>
@@ -47,5 +48,20 @@
 <br />
 <%= link_to "Verwijder", @article, method: :delete, data: { confirm: "Weet je het zeker?" } %>
 <%= link_to "Bewerk", edit_article_path %>
+
+<ul>
+  <li><h2>Tags bij dit artikel:</h2></li>
+
+  <li>
+    <% @article.tags.each do |tag| %>
+    <%= link_to tag.name, tag_path(tag.name) %>
+    <% end %>
+  </li>
+</ul>
+
+<span class="article-source">
+  <h2>Bron:</h2>
+  <%= @article.source %>
+</span>
 
 <%= render 'shared/tabbar' %>

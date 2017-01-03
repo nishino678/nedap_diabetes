@@ -3,7 +3,7 @@ html, body {
   height: 100%;
 }
 
-.container {
+main {
   margin: 0 0 50px;
 }
 
@@ -11,6 +11,10 @@ html, body {
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+.container{
+  padding: 10px 20px 10px 20px;
 }
 
 a{
