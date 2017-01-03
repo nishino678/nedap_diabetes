@@ -11,15 +11,14 @@
 
   <body>
     <main>
-      <div class="main">
-          <% flash.each do |message_type, message| %>
-            <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
-          <% end %>
-        <%= yield %>
-        <%= debug(params) if Rails.env.development? %>
-      </div>
+      <% flash.each do |message_type, message| %>
+        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+      <% end %>
 
-      <%= render 'shared/tabbar' %>
+      <%= yield %>
+      <%= debug(params) if Rails.env.development? %>
+
     </main>
+    <%= render 'shared/tabbar' %>
   </body>
 </html>

@@ -1,17 +1,14 @@
 <% @back_or_search = "search" %>
 <%= render 'shared/header' %>
 
-<h1>Artikelen</h1>
-
 <% @article.each do |article| %>
+<%= link_to article do %>
   <article class="news-article">
     <header>
-      <h2 class="title">
-        <%= link_to article.title, article, class:"title" %>
-        <!-- <%= article.created_at.strftime("%e-%m") %> -->
-      </h2>
+      <h2 class="title"><%= article.title %></h2>
     </header>
   </article>
+  <% end %>
 <% end %>
 
 <% if current_user.admin? %>
