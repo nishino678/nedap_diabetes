@@ -5,16 +5,20 @@
   <h1 class="page-title">Favoriete artikelen van <%= @user.firstname %></h1>
 </div>
 
+
 <ul class="overview-list">
   <% @user.favorites.each do |favorited| %>
-    <li><% article = favorited.favorited_id %>
-      <h2> <%= link_to Article.find(article).title, article_path(article) %></h2>
-      <span class="icon">b</span>
+    <li>
+      <div class="wrapper">
+        <%= link_to(article_path(favorited.favorited_id)) do %>
+          <h2><%= Article.find(favorited.favorited_id).title %></h2>
+          <span class="icon">b</span>
+        <% end %>
+        <%= link_to "verwijderen", article_favorite_path(favorited.favorited_id), method: :delete , class: "delete" %>
+      </div>
     </li>
+    <% end %>
 </ul>
-
-<%= link_to "Favoriet verwijderen", article_favorite_path(article), method: :delete %>
-<% end %>
 
 <% if @favorite %>
   <%= form_for([@article, @favorite], method: "delete") do %>
