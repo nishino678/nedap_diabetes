@@ -1,14 +1,9 @@
 <% @back_or_search = "back" %>
 <%= render 'shared/header' %>
 
-<h1 class="page-title">Favoriete artikelen van <%= @user.firstname %></h1>
-
-<% if @favorite %>
-  <%= form_for([@article, @favorite], method: "delete") do %>
-    <%= submit_tag "Remove favorite" %>
-  <% end %>
-<% end %>
-
+<div class="container">
+  <h1 class="page-title">Favoriete artikelen van <%= @user.firstname %></h1>
+</div>
 
 <ul class="overview-list">
   <% @user.favorites.each do |favorited| %>
@@ -17,7 +12,14 @@
       <span class="icon">b</span>
     </li>
 </ul>
+
 <%= link_to "Favoriet verwijderen", article_favorite_path(article), method: :delete %>
+<% end %>
+
+<% if @favorite %>
+  <%= form_for([@article, @favorite], method: "delete") do %>
+    <%= submit_tag "Remove favorite" %>
+  <% end %>
 <% end %>
 
 <%= render 'shared/tabbar' %>

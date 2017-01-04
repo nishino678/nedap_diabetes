@@ -1,7 +1,9 @@
 <% @back_or_search = "back" %>
 <%= render 'shared/header' %>
 
-<h2><%= @fact.title %></h2>
-<%= @fact.content %>
+<div class="container">
+  <h2 class="page-title"><%= @fact.title %></h2>
+  <%= @fact.content %>
+</div>
 
 <%= render 'shared/tabbar' %>
