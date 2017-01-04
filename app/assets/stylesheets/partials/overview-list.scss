@@ -17,7 +17,7 @@
   width: 100%;
   height: 100%;
   min-height: 44px;
-  padding: 0 20px 0 20px;
+  padding: 10px 20px;
   justify-content: center;
   align-items: center;
   }
@@ -45,6 +45,7 @@
 
   .wrapper {
     transform:translatex(-100px);
+    @include transition;
   }
 
   .icon{

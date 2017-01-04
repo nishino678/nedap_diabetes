@@ -11,7 +11,7 @@
     <li>
       <div class="wrapper">
         <%= link_to(article_path(favorited.favorited_id)) do %>
-          <h2><%= Article.find(favorited.favorited_id).title %></h2>
+          <h2 class="overview-list-title"><%= Article.find(favorited.favorited_id).title %></h2>
           <span class="icon">b</span>
         <% end %>
         <%= link_to "verwijderen", article_favorite_path(favorited.favorited_id), method: :delete , class: "delete" %>

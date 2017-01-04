@@ -13,7 +13,7 @@
   <% @fact.each do |fact| %>
     <li>
       <%= link_to fact do %>
-        <h2><%= fact.title %></h2>
+        <h2 class="overview-list-title"><%= fact.title %></h2>
         <span class="icon">b</span>
 
         <% if current_user.admin? %>
