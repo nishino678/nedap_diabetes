@@ -1,0 +1,20 @@
+.fact{
+  padding: 20px;
+  border-bottom: 1px solid $textcolor;
+
+  &:first-child{
+    border-top: 1px solid $textcolor;
+  }
+
+  .icon{
+    display: inline-block;
+
+    color:$title;
+    float: right;
+    text-decoration: none;
+    font:{
+      family: "floor-font";
+      size: 25px;
+    }
+  }
+}
