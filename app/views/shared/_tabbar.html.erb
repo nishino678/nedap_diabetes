@@ -1,21 +1,20 @@
-
 <nav class="tabbar">
   <ul>
-    <li class="tabs">
+    <li class="tabs <%= 'active' if request.path == favorites_path %>">
       <%= link_to favorites_path  do %>
           <span class="icon">e</span>
           <span>Favorieten</span>
       <% end %>
     </li>
 
-    <li class="tabs active">
+    <li class="tabs <%= 'active' if request.path == articles_path %>">
       <%= link_to articles_path  do %>
           <span class="icon">c</span>
           <span>Artikelen</span>
       <% end %>
     </li>
 
-    <li class="tabs">
+    <li class="tabs <%= 'active' if request.path == facts_path %>">
       <%= link_to facts_path  do %>
           <span class="icon">d</span>
           <span>Diaclopedie</span>
