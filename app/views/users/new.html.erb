@@ -1,5 +1,6 @@
 <div class="container">
   <%= link_to 'Vorige', 'javascript:history.go(-1);' %>
+  <% content_for :body_class, 'testclass' %>
 
   <% provide(:button_text, "Aanmelden") %>
   <h1 class="page-title center">Aanmelden</h1>
