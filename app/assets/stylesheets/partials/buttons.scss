@@ -3,6 +3,8 @@
   width: 100%;
   padding:10px 20px;
   border-radius:30px;
+  margin:5px 0;
+  border: 0;
 
   font:{
     family: 'Rubik',sans-serif;
@@ -12,11 +14,11 @@
   text-align:center;
   @include box-shadow();
 
-  &-blue{
+  &.blue{
     background:$blueberry;
     color:$white;
   }
-  &-white{
+  &.white{
     background:$white;
     color:$blueberry;
   }

@@ -1,9 +1,13 @@
 <% @back_or_search = "back" %>
 <%= render 'shared/header' %>
 
-<br />Welkom, <%= @user.firstname %>.<br />
-<%= link_to "Account wijzigen", edit_user_path(current_user) %><br />
-<%= link_to "Uitloggen", logout_path, method: "delete" %><br />
+<div class="container">
+  <h1 class="page-title center"> Hallo, <%= @user.firstname %> </h1>
+  <p class="center">je kan hier uitloggen en je account wijzigen</p>
+
+  <%= link_to "Account wijzigen", edit_user_path(current_user), class:"button" %>
+  <%= link_to "Uitloggen", logout_path, method: "delete", class:"button" %>
+</div>
 
 <% if current_user.admin? %>
 <br /> Deze gebruiker is een admin. <br />

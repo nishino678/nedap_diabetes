@@ -1,0 +1,19 @@
+.input {
+  width: 100%;
+  padding:5px 20px 5px 40px;
+  border: 1px solid $white;
+  border-radius:30px;
+  outline: none;
+  font-size:$basecopy;
+  @include box-shadow();
+  margin: 0 0 10px 0 ;
+  background-color:$white;
+
+  &.wrong {
+    border-color:red;
+  }
+
+  &.right {
+    border-color:blue;
+  }
+}
