@@ -1,18 +1,32 @@
-<div class="container">
-  <%= link_to 'Vorige', 'javascript:history.go(-1);' %>
-  <% content_for :body_class, 'testclass' %>
+<%= link_to 'Vorige', 'javascript:history.go(-1);' %>
+<% content_for :body_class, 'onboarding' %>
 
+<div class="section image">
+  afbeelding komt hier
+</div>
+
+<div class="section container">
   <% provide(:button_text, "Aanmelden") %>
   <h1 class="page-title center">Aanmelden</h1>
   <p class="center">
     Voor we kunnen beginnen heb ik nog wat gegevens van je nodig.
     Het invullen is zo klaar.
   </p>
+</div>
 
-  <%= form_for @user do |f| %>
-    <%= render 'shared/error_messages' %>
-    <%= render "#{@user.current_step}_step", :f => f %>
-    <%= f.submit "Bevestig", class:"button blue" %>
-  <% end %>
+  <div class="section action">
+    <%= form_for @user do |f| %>
+      <%= render 'shared/error_messages' %>
+      <%= render "#{@user.current_step}_step", :f => f %>
+      <%= f.submit "Verder", class:"button blue" %>
+    <% end %>
+
+    <div class="nav-bullets">
+      <span class="bullet full"></span>
+      <span class="bullet full"></span>
+      <span class="bullet"></span>
+    </div>
+
+  </div>
 
 </div>

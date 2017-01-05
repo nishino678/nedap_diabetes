@@ -1,4 +1,6 @@
-<div class="container">
+<% content_for :body_class, 'onboarding' %>
+
+<div class=" section container">
   <%= link_to 'Vorige', 'javascript:history.go(-1);' %>
   <h1 class="page-title center">Inloggen</h1>
   <p class="center">
@@ -7,11 +9,11 @@
   </p>
 </div>
 
-<div class="image-section">
+<div class="section image">
   afbeelding komt hier
 </div>
 
-<div class="container">
+<div class="section action">
   <%= form_for(:session, url: login_path) do |f| %>
     <%= f.email_field :email, placeholder: "E-mail..", class:"input" %>
     <%= f.password_field :password, placeholder: "Wachtwoord..", class:"input" %>
