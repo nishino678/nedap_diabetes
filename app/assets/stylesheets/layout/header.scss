@@ -10,6 +10,7 @@
   align-items:center;
   @include box-shadow;
 
+
   a{
     color:$white;
   }
@@ -18,6 +19,7 @@
     color:$white;
     text-decoration: none;
     padding: 0 20px 0 20px;
+    line-height: 30px;
     font:{
       family: "floor-font";
       size: 25px;

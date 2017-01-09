@@ -31,3 +31,13 @@ pre.debug_dump{
   .mobile{display: none;}
   .desktop{display:block;}
 }
+
+img {
+  width: 80%;
+  height: auto;
+  transform:translateY(calc( -45px / 2 ));
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
