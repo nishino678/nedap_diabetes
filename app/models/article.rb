@@ -11,7 +11,7 @@ class Article < ApplicationRecord
   accepts_nested_attributes_for :questions
   belongs_to :specialist, inverse_of: :articles
 
-  has_attached_file :article_image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: ":style/missing.png"
+  has_attached_file :article_image, styles: { medium: "720x>", thumb: "100x100>" }, default_url: ":style/missing.png"
   validates_attachment_content_type :article_image, content_type: /\Aimage\/.*\z/
 
   def all_tags=(names)
