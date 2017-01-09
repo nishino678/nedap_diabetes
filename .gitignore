@@ -12,6 +12,9 @@
 /db/*.sqlite3-journal
 /config/database.yml
 
+#ignore seeded images
+/public/system/articles/*
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
@@ -24,4 +27,6 @@
 # Ignore Spring files.
 /spring/*.pid
 
+# Nobody needs a DS_Store
 .DS_Store
+

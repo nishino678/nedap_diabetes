@@ -2,8 +2,9 @@
 <%= render 'shared/header' %>
 
 <% @article.each do |article| %>
+
 <%= link_to article do %>
-  <article class="news-article">
+  <article class="news-article", style="background: url(<%= article.article_image.url(:medium) %>)">
     <header>
       <h2 class="title"><%= article.title %></h2>
     </header>

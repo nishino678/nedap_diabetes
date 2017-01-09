@@ -30,36 +30,6 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert_template 'welcome/index'
   end
 
-  test "non admin can't see add article and specialist button" do
-    log_in_as(@user, remember_me: '0')
-    get articles_path
-    assert_select "a[href=?]", new_article_path,      count: 0
-    assert_select "a[href=?]", specialists_path,      count: 0
-  end
-
-  test "admin can see add article and specialist button" do
-    log_in_as(@admin, remember_me: '0')
-    get articles_path
-    assert_select "a[href=?]", new_article_path
-    assert_select "a[href=?]", specialists_path
-  end
-
-  test "logged in user can't get specialists path" do
-    log_in_as(@user, remember_me: '0')
-    get specialists_path
-    assert_redirected_to root_url
-    follow_redirect!
-    assert_redirected_to articles_path
-  end
-
-  test "logged in user can't get add article path" do
-    log_in_as(@user, remember_me: '0')
-    get new_article_path
-    assert_redirected_to root_url
-    follow_redirect!
-    assert_redirected_to articles_path
-  end
-
   test "login with remembering" do
     #login and set cookie
     log_in_as(@user, remember_me: '1')

@@ -1,8 +1,8 @@
 <% @back_or_search = "back" %>
 <%= render 'shared/header' %>
 
-
 <div class="container">
+  <ul><%= image_tag @article.article_image.url(:medium) %></ul>
   <h2 class=page-title><%= @article.title %></h2>
   <p>geschreven door: <%= @article.author %></p>
   <p><%= @article.content %></p>
@@ -45,8 +45,10 @@
 <% end %>
 
 <br />
+<% if current_user.admin? %>
 <%= link_to "Verwijder", @article, method: :delete, data: { confirm: "Weet je het zeker?" } %>
 <%= link_to "Bewerk", edit_article_path %>
+<% end %>
 
 <ul>
   <li><h2>Tags bij dit artikel:</h2></li>

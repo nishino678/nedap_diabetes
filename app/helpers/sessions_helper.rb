@@ -36,7 +36,11 @@ module SessionsHelper
   end
 
   def admin?
-    current_user.admin?
+    if current_user.preset?
+      current_user.admin?
+    else
+      return false
+    end
   end
 
   # Logs out the current user.
@@ -58,7 +62,11 @@ module SessionsHelper
 private
 
   def admin_user
-    redirect_to(root_url) unless current_user.admin?
+    if current_user == nil
+      redirect_to root_url
+    else
+      redirect_to(root_url) unless current_user.admin?
+    end
   end
 
   def forget(user)
@@ -70,8 +78,8 @@ private
   def logged_in_user
     unless logged_in?
       store_location
-      flash[:danger] = "Log eerst in."
-      redirect_to login_url
+      flash[:danger] = "Meld je aan of log in om verder te gaan."
+      redirect_to root_url
     end
   end
 end

@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
   before_action :logged_in_user, only: [:show, :index]
   before_action :admin_user,     only: [:new, :edit, :destroy]
 
+
   def new
     @article = Article.new
     3.times do
@@ -16,10 +17,14 @@ end
 
 def index
   @article = if params[:tag]
-  Article.tagged_with(params[:tag])
+  flash.clear
+  Article.tagged_with(params[:tag].downcase).order('created_at DESC')
+
 else
   @article = Article.all.order('created_at DESC')
 end
+ rescue NoMethodError
+    redirect_to articles_path, :flash => { :error => "Geen artikel gevonden met deze tag." }
 end
 
 def edit
@@ -55,21 +60,26 @@ end
 
 private
 
-def news_params
-  params.require(:article).permit(:all_tags, :id, :specialist_id, :explanation, :title, :author, :content, :source,
-    specialists_attributes: [:id],
-    questions_attributes: [:id, :content, :article_id,
-      answers_attributes: [:id, :content, :correct
-      ]
-    ]
-    )
-end
-
-def logged_in_user
-  unless logged_in?
-    store_location
-    flash[:danger] = "Log eerst in."
-    redirect_to login_url
+  def catch_not_found
+    yield
+  rescue ActiveRecord::RecordNotFound
+    redirect_to articles_path, :flash => { :error => "Geen artikel gevonden met deze tag." }
   end
-end
+
+  def news_params
+    params.require(:article).permit(:all_tags, :id, :specialist_id, :explanation, :title, :author, :content, :source, :article_image,
+      specialists_attributes: [:id],
+      questions_attributes: [:id, :content, :article_id,
+        answers_attributes: [:id, :content, :correct]
+        ]
+      )
+  end
+
+  def logged_in_user
+    unless logged_in?
+      store_location
+      flash[:danger] = "Meld je aan of log in om verder te gaan."
+      redirect_to root_url
+    end
+  end
 end

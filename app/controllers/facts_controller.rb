@@ -1,5 +1,7 @@
 class FactsController < ApplicationController
-  before_action :admin_user,   only: [:edit, :destroy, :update]
+  before_action :logged_in_user, only: [:show, :index]
+  before_action :admin_user,     only: [:new, :edit, :destroy]
+
   def index
     @fact = Fact.all.order('title ASC')
   end
@@ -14,7 +16,6 @@ class FactsController < ApplicationController
       redirect_to @fact
       flash[:succes] = "Feitje aangemaakt."
     else
-      flash.now[:danger] = @fact.errors.messages
       render 'new'
     end
   end
