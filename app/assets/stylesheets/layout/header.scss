@@ -58,6 +58,24 @@
     top: 6px;
 }
 
+.icon.back.pink {
+    color: $highlight;
+    display: block;
+    position: relative;
+    padding: 11px 0 0 30px;
+    font-family: "Rubik"
+}
+
+.icon.back.pink:before {
+    content: "a";
+    font-family: "floor-font";
+    color: $highlight;
+    position: absolute;
+    font-size: 35px;
+    left: 5px;
+    top: 20px;
+}
+
 .logo{
   color:$white;
 }

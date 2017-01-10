@@ -40,14 +40,6 @@
   </ul>
 </div>
 
-<ul>
-  <li><h2>Uitleg van de specialist</h2></li>
-  <li>Advies van: <%= @article.specialist.name %></li>
-  <li>Beroep specialist: <%= @article.specialist.profession %></li>
-  <li><%= @article.explanation %></li>
-  <li>Over de specialist: </b><%= @article.specialist.bio %></li>
-</ul>
-
 <% if current_user.favorited?(@article) %>
   <%= link_to "Favoriet verwijderen", article_favorite_path(@article), method: :delete %>
 <% else %>
@@ -61,6 +53,19 @@
 <% end %>
 
 <div class="container">
+
+  <ul>
+    <li><h2>Uitleg van de specialist</h2></li>
+    <li><%= @article.explanation %></li>
+    <li><h2>Advies van:</h2></li>
+    <li><%= @article.specialist.name %></li>
+    <li><h2>Beroep specialist:</h2></li>
+    <li><%= @article.specialist.profession %></li>
+    <li><h2>Over de specialist:</h2></li>
+    <li><%= @article.specialist.bio %></li>
+  </ul>
+
+
   <span class="article-source">
     <h2>Bron:</h2>
     <%= @article.source %>
