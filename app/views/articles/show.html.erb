@@ -4,9 +4,19 @@
 <div class="container">
   <ul><%= image_tag @article.article_image.url(:medium) %></ul>
   <h2 class=page-title><%= @article.title %></h2>
-  <p>geschreven door: <%= @article.author %></p>
+  <p>Geschreven door: <%= @article.author %></p>
   <p><%= @article.content %></p>
+
+  <span class="tags">
+    <h2 class="title">Tags bij dit artikel:</h2>
+    <ul>
+      <% @article.tags.each do |tag| %>
+      <li class="tag"><%= link_to tag.name, tag_path(tag.name) %></li>
+      <% end %>
+    </ul>
+  </span>
 </div>
+
 
 <div class="quiz">
   <div class="question">
@@ -50,19 +60,11 @@
 <%= link_to "Bewerk", edit_article_path %>
 <% end %>
 
-<ul>
-  <li><h2>Tags bij dit artikel:</h2></li>
-
-  <li>
-    <% @article.tags.each do |tag| %>
-    <%= link_to tag.name, tag_path(tag.name) %>
-    <% end %>
-  </li>
-</ul>
-
-<span class="article-source">
-  <h2>Bron:</h2>
-  <%= @article.source %>
-</span>
+<div class="container">
+  <span class="article-source">
+    <h2>Bron:</h2>
+    <%= @article.source %>
+  </span>
+</div>
 
 <%= render 'shared/tabbar' %>
