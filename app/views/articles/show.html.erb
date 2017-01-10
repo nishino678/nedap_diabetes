@@ -1,52 +1,59 @@
 <% @back_or_search = "back" %>
 <%= render 'shared/header' %>
 
-<div class="container">
-  <ul><%= image_tag @article.article_image.url(:medium) %></ul>
-  <h2 class=page-title><%= @article.title %></h2>
-  <p>Geschreven door: <%= @article.author %></p>
+<article class="container">
+  <header class="news-article", style="background: url("")">
+    <h2 class=page-title><%= @article.title %></h2>
+    <%= image_tag @article.article_image.url(:medium) %>
+  </header>
+
   <p><%= @article.content %></p>
+
+  <span class="article-source">
+    <p>Bron: <%= @article.source %></p>
+  </span>
 
   <span class="tags">
     <h2 class="title">Tags bij dit artikel:</h2>
     <ul>
       <% @article.tags.each do |tag| %>
-      <li class="tag"><%= link_to tag.name, tag_path(tag.name) %></li>
+        <li class="tag"><%= link_to tag.name, tag_path(tag.name) %></li>
       <% end %>
     </ul>
   </span>
-</div>
+</article>
 
+<section class="quiz">
+  <h2 class="quiz-text">Vragen bij dit artikel</h2>
 
-<div class="quiz">
-  <div class="question">
-    <h2 class="quiz-text">Vragen bij dit artikel</h2>
-    <ul>
+  <ul class="question">
     <% for x in 0..2 %>
       <li class="basecopy-negative">
         <%= question_content(x) %>
       </li>
     <% end %>
-    </ul>
-  </div>
+  </ul>
 
   <ul class="answers">
-      <% for i in 0..2 %>
-        <li class="answer">
-            <%= question_answer(x, i) %>
-            <%= question_answer_correct?(x, i) %>
-        </li>
-      <% end %>
+    <% for i in 0..2 %>
+      <li class="answer">
+        <%= question_answer(x, i) %>
+        <%= question_answer_correct?(x, i) %>
+      </li>
+    <% end %>
   </ul>
-</div>
+</section>
 
-<ul>
-  <li><h2>Uitleg van de specialist</h2></li>
-  <li>Advies van: <%= @article.specialist.name %></li>
-  <li>Beroep specialist: <%= @article.specialist.profession %></li>
-  <li><%= @article.explanation %></li>
-  <li>Over de specialist: </b><%= @article.specialist.bio %></li>
-</ul>
+<section>
+  <ul>
+    <li>Uitleg van de specialist</li>
+    <li>Advies van: <%= @article.specialist.name %></li>
+    <li>Beroep specialist: <%= @article.specialist.profession %></li>
+    <li><%= @article.explanation %></li>
+    <li>Over de specialist: </b><%= @article.specialist.bio %></li>
+  </ul>
+</section>
+
 
 <% if current_user.favorited?(@article) %>
   <%= link_to "Favoriet verwijderen", article_favorite_path(@article), method: :delete %>
@@ -56,15 +63,8 @@
 
 <br />
 <% if current_user.admin? %>
-<%= link_to "Verwijder", @article, method: :delete, data: { confirm: "Weet je het zeker?" } %>
-<%= link_to "Bewerk", edit_article_path %>
+  <%= link_to "Verwijder", @article, method: :delete, data: { confirm: "Weet je het zeker?" } %>
+  <%= link_to "Bewerk", edit_article_path %>
 <% end %>
-
-<div class="container">
-  <span class="article-source">
-    <h2>Bron:</h2>
-    <%= @article.source %>
-  </span>
-</div>
 
 <%= render 'shared/tabbar' %>
