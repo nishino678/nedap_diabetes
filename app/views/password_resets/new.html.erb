@@ -1,7 +1,8 @@
 <% content_for :body_class, 'onboarding' %>
 
 <div class="section container">
-  <%= link_to 'Vorige', 'javascript:history.go(-1);' %>
+  <%= link_to 'vorige', 'javascript:history.go(-1);', class:"icon back grey" %>
+  <img class="test" src="<%= asset_path( 'Floor_inlog.svg' ) %>" />
   <% provide(:title, "Wachtwoord vergeten") %>
   <h1 class="page-title center">Wachtwoord vergeten? <br> Dat kan gebeuren.</h1>
   <p class="center">

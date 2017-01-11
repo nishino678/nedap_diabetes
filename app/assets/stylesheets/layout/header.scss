@@ -58,21 +58,21 @@
     top: 6px;
 }
 
-.icon.back.pink {
-    color: $highlight;
+.icon.back.grey {
+    color: $lines;
     display: block;
     position: relative;
-    padding: 11px 0 0 30px;
+    padding: 11px 0 0 10px;
     font-family: "Rubik"
 }
 
-.icon.back.pink:before {
+.icon.back.grey:before {
     content: "a";
     font-family: "floor-font";
-    color: $highlight;
+    color: $lines;
     position: absolute;
     font-size: 35px;
-    left: 5px;
+    left: -18px;
     top: 20px;
 }
 

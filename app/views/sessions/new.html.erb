@@ -1,8 +1,7 @@
 <% content_for :body_class, 'onboarding' %>
-<%= link_to 'vorige', 'javascript:history.go(-1);', class:"icon back pink" %>
 
 <div class=" section container">
-
+  <%= link_to 'vorige', 'javascript:history.go(-1);', class:"icon back grey" %>
   <h1 class="page-title center">Inloggen</h1>
   <p class="center">
     Welkom terug. <br >
@@ -20,8 +19,10 @@
     <%= f.password_field :password, placeholder: "Wachtwoord..", class:"input" %>
 
     <%= f.label :remember_me do %>
-    <%= f.check_box :remember_me %>
+    <%= f.check_box :remember_me, class:"checkbox" %>
     Onthoud mij <br />
+
+
     <%= link_to 'Wachtwoord vergeten?', new_password_reset_path %>
   <% end %>
 

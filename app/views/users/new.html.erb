@@ -1,17 +1,17 @@
-<%= link_to 'Vorige', 'javascript:history.go(-1);', class:"icon back pink" %>
 <% content_for :body_class, 'onboarding' %>
 
-<div class="section image">
-  afbeelding komt hier
-</div>
-
 <div class="section container">
+  <%= link_to 'vorige', 'javascript:history.go(-1);', class:"icon back grey" %>
   <% provide(:button_text, "Aanmelden") %>
   <h1 class="page-title center">Aanmelden</h1>
   <p class="center">
     Voor we kunnen beginnen heb ik nog wat gegevens van je nodig.
     Het invullen is zo klaar.
   </p>
+</div>
+
+<div class="section image">
+  <img src="<%= asset_path( 'Floor_inlog.svg' ) %>" />
 </div>
 
   <div class="section action">
@@ -26,7 +26,5 @@
       <span class="bullet full"></span>
       <span class="bullet"></span>
     </div>
-
   </div>
-
 </div>
