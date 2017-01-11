@@ -21,28 +21,29 @@
   <div class="question">
     <h2 class="quiz-text">Vragen bij dit artikel</h2>
     <ul>
-    <% for x in 0..2 %>
+      <% for x in 0..2 %>
       <li class="basecopy-negative">
         <%= question_content(x) %>
       </li>
-    <% end %>
-    </ul>
-  </div>
-
-  <ul class="answers">
-      <% for i in 0..2 %>
-        <li class="answer">
+      <li>
+        <ul class="answers">
+          <% for i in 0..2 %>
+          <li class="answer">
             <%= question_answer(x, i) %>
             <%= question_answer_correct?(x, i) %>
-        </li>
+          </li>
+          <% end %>
+        </ul>
+      </li>
       <% end %>
-  </ul>
+    </ul>
+  </div>
 </div>
 
 <% if current_user.favorited?(@article) %>
-  <%= link_to "Favoriet verwijderen", article_favorite_path(@article), method: :delete %>
+<%= link_to "Favoriet verwijderen", article_favorite_path(@article), method: :delete %>
 <% else %>
-  <%= link_to "Opslaan in favorieten", article_favorite_path(@article), method: :post %>
+<%= link_to "Opslaan in favorieten", article_favorite_path(@article), method: :post %>
 <% end %>
 
 <br />
