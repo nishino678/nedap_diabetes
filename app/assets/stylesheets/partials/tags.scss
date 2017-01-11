@@ -1,0 +1,18 @@
+.tags{
+  display: block;
+  padding:0 0 20px 0;
+}
+
+.tag{
+  display: inline-block;
+  border: 1px solid $highlight;
+  border-radius: 30px;
+  font-size: 14px;
+  margin:3px 0;
+
+  a{
+    color:$highlight;
+    padding: 5px 10px;
+    font-size: 13px;
+  }
+}

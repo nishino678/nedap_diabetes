@@ -1,6 +1,5 @@
-Gefeliciteerd, het aanmaken van een account is gelukt!
-
-Zal ik je uitleggen hoe de applicatie werkt?
-
-  <p><%= f.submit "Nee bedankt, liever niet" %></p>
-  <p><%= f.submit "Ja graag, leg het me uit" %></p>
+<%= form_for @user do |f| %>
+  <%= render 'shared/error_messages' %>
+  <p><%= f.submit "Nee bedankt, liever niet", class:"button blue" %></p>
+  <p><%= f.submit "Ja graag, leg het me uit", class:"button blue" %></p>
+<% end %>

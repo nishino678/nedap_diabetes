@@ -9,22 +9,71 @@
   justify-content:space-between;
   align-items:center;
   @include box-shadow;
+}
 
 
-  a{
-    color:$white;
-  }
+.header .icon.search {
+    display: block;
+    position: relative;
+}
 
-  .icon{
-    color:$white;
-    text-decoration: none;
-    padding: 0 20px 0 20px;
-    line-height: 30px;
-    font:{
-      family: "floor-font";
-      size: 25px;
-    }
-  }
+.icon.search:before {
+    content: "j";
+    font-family: "floor-font";
+    color: white;
+    position: absolute;
+    font-size: 25px;
+    padding: 5px 0 0 20px;
+}
+
+.header .icon.menu {
+    color: transparent !important;
+    display: block;
+    position: relative;
+}
+
+.icon.menu:before {
+    content: "h";
+    font-family: "floor-font";
+    color: white;
+    position: absolute;
+    font-size: 25px;
+    padding: 5px 0 0 0;
+}
+
+.header .icon.back {
+    color: $white;
+    display: block;
+    position: relative;
+    padding: 0 0 0 30px;
+}
+
+.icon.back:before {
+    content: "a";
+    font-family: "floor-font";
+    color: white;
+    position: absolute;
+    font-size: 25px;
+    left: 10px;
+    top: 6px;
+}
+
+.icon.back.grey {
+    color: $lines;
+    display: block;
+    position: relative;
+    padding: 11px 0 0 10px;
+    font-family: "Rubik"
+}
+
+.icon.back.grey:before {
+    content: "a";
+    font-family: "floor-font";
+    color: $lines;
+    position: absolute;
+    font-size: 35px;
+    left: -18px;
+    top: 20px;
 }
 
 .logo{
@@ -35,6 +84,6 @@
   width:100%;
   position: fixed;
   top:40px;
+  padding:15px 20px 10px 20px;
   background-color: $subheader;
-
 }
