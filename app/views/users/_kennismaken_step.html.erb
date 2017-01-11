@@ -1,3 +1,13 @@
-<br />Hallo <%= @user.firstname %> leuk om kennis met je te maken!
+<%= form_for @user do |f| %>
+  <%= f.submit "Terug", :name => "back_button", class:"icon back grey" %>
 
-  <p><%= f.submit "Begrepen" %></p>
+  <%= render 'shared/error_messages' %>
+  <br />Hallo <%= @user.firstname %> leuk om kennis met je te maken!
+  <p><%= f.submit "Begrepen", class:"button blue" %></p>
+<% end %>
+
+<div class="nav-bullets">
+      <span class="bullet full"></span>
+      <span class="bullet full"></span>
+      <span class="bullet"></span>
+</div>
