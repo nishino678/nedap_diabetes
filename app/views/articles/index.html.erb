@@ -1,16 +1,15 @@
 <% @back_or_search = "search" %>
 <%= render 'shared/header' %>
 
-<% @article.each do |article| %>
-
-<%= link_to article do %>
-  <article class="news-article", style="background: url(<%= article.article_image.url(:medium) %>)">
-    <header>
-      <h2 class="title"><%= article.title %></h2>
-    </header>
-  </article>
+<section class="article-group">
+  <% @article.each do |article| %>
+    <%= link_to article do %>
+      <figure class="news-article" style="background-image: url(<%= article.article_image.url(:medium) %>);">
+        <h2 class="title"><%= article.title %></h2>
+      </figure>
+    <% end %>
   <% end %>
-<% end %>
+</section>
 
 <% if current_user.admin? %>
   <%= link_to "Nieuw artikel", new_article_path %>
