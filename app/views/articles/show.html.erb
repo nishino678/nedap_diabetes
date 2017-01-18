@@ -17,7 +17,13 @@
         <% end %>
       </ul>
     </span>
+    <% if current_user.favorited?(@article) %>
+    <%= link_to "Favoriet verwijderen", article_favorite_path(@article), class:"button blue favorite-active", method: :delete %>
+    <% else %>
+    <%= link_to "Opslaan in favorieten", article_favorite_path(@article), class:"button blue favorite", method: :post %>
+    <% end %>
   </div>
+
 </article>
 
 <div class="quiz">
@@ -43,13 +49,6 @@
   </div>
 </div>
 
-<% if current_user.favorited?(@article) %>
-<%= link_to "Favoriet verwijderen", article_favorite_path(@article), method: :delete %>
-<% else %>
-<%= link_to "Opslaan in favorieten", article_favorite_path(@article), method: :post %>
-<% end %>
-
-<br />
 <% if current_user.admin? %>
 <%= link_to "Verwijder", @article, method: :delete, data: { confirm: "Weet je het zeker?" } %>
 <%= link_to "Bewerk", edit_article_path %>

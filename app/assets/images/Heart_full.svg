@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="25px" height="24px" viewBox="0 0 25 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>Combined Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M15.8693458,19.5562714 C15.865083,19.5563232 15.860813,19.5563492 15.856536,19.5563492 L2.56051019,19.5563492 C2.00592738,19.5563492 1.55634919,19.1148248 1.55634919,18.5521882 L1.55634919,5.25616237 C1.55634919,5.25190011 1.55637527,5.24764405 1.55642728,5.24339436 C1.55637524,5.2317766 1.55634919,5.22015282 1.55634919,5.2085231 C1.55634919,0.982344144 4.99094357,-2.44365081 9.2085231,-2.44365081 C13.1284257,-2.44365081 16.3599224,0.51116388 16.8077157,4.30490995 C20.6080632,4.7529769 23.5563492,7.99167189 23.5563492,11.9041753 C23.5563492,16.1303542 20.1217548,19.5563492 15.9041753,19.5563492 C15.8925594,19.5563492 15.8809495,19.5563232 15.8693458,19.5562714 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="22" height="22" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Prototype-3.0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <use id="Combined-Shape" stroke="#D63E79" mask="url(#mask-2)" stroke-width="3" fill="#FF93B6" transform="translate(12.556349, 8.556349) rotate(-45.000000) translate(-12.556349, -8.556349) " xlink:href="#path-1"></use>
+    </g>
+</svg>
