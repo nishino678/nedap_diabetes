@@ -23,3 +23,14 @@
     color:$blueberry;
   }
 }
+
+.admin-buttons{
+  margin: 0 auto;
+  width: 60%;
+  max-width: 200px;
+
+  .button{
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+}

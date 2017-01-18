@@ -1,2 +1,0 @@
-class NewsTag < ApplicationRecord
-end

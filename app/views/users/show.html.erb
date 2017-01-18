@@ -10,8 +10,11 @@
 </div>
 
 <% if current_user.admin? %>
-<br /> Deze gebruiker is een admin. <br />
-<%= link_to "Gebruikersoverzicht", users_path %>
+  <br/>
+  <p>Deze gebruiker is een admin.</p> 
+  <div class="admin-buttons">
+    <%= link_to "Gebruikersoverzicht", users_path, class:"button blue" %>
+  </div>
 <% end %>
 
 <%= render 'shared/tabbar' %>

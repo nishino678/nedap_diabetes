@@ -1,48 +1,52 @@
 <% @back_or_search = "back" %>
 <%= render 'shared/header' %>
 
-<div class="container">
-  <ul><%= image_tag @article.article_image.url(:medium) %></ul>
-  <h2 class=page-title><%= @article.title %></h2>
-  <p>Geschreven door: <%= @article.author %></p>
-  <p><%= @article.content %></p>
+<article>
+  <figure class="news-article" style="background-image: url(<%= @article.article_image.url(:medium) %>);">
+    <h2 class="title"><%= @article.title %></h2>
+  </figure>
+  <div class="container">
+    <p>Geschreven door: <%= @article.author %></p>
+    <p><%= @article.content %></p>
 
-  <span class="tags">
-    <h2 class="title">Tags bij dit artikel:</h2>
-    <ul>
-      <% @article.tags.each do |tag| %>
-      <li class="tag"><%= link_to tag.name, tag_path(tag.name) %></li>
-      <% end %>
-    </ul>
-  </span>
-</div>
+    <span class="tags">
+      <h2 class="title">Tags bij dit artikel:</h2>
+      <ul>
+        <% @article.tags.each do |tag| %>
+        <li class="tag"><%= link_to tag.name, tag_path(tag.name) %></li>
+        <% end %>
+      </ul>
+    </span>
+  </div>
+</article>
 
 <div class="quiz">
   <div class="question">
     <h2 class="quiz-text">Vragen bij dit artikel</h2>
     <ul>
-    <% for x in 0..2 %>
+      <% for x in 0..2 %>
       <li class="basecopy-negative">
         <%= question_content(x) %>
       </li>
-    <% end %>
-    </ul>
-  </div>
-
-  <ul class="answers">
-      <% for i in 0..2 %>
-        <li class="answer">
+      <li>
+        <ul class="answers">
+          <% for i in 0..2 %>
+          <li class="answer">
             <%= question_answer(x, i) %>
             <%= question_answer_correct?(x, i) %>
-        </li>
+          </li>
+          <% end %>
+        </ul>
+      </li>
       <% end %>
-  </ul>
+    </ul>
+  </div>
 </div>
 
 <% if current_user.favorited?(@article) %>
-  <%= link_to "Favoriet verwijderen", article_favorite_path(@article), method: :delete %>
+<%= link_to "Favoriet verwijderen", article_favorite_path(@article), method: :delete %>
 <% else %>
-  <%= link_to "Opslaan in favorieten", article_favorite_path(@article), method: :post %>
+<%= link_to "Opslaan in favorieten", article_favorite_path(@article), method: :post %>
 <% end %>
 
 <br />
