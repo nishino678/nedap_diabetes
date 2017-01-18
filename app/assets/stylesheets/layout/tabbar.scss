@@ -13,7 +13,7 @@ background: $white;
   width:calc(100%/3);
   float:left;
   text-align: center;
-  border-right: 1px solid $textcolor;
+  border-right: 1px solid $lines;
   font:{
     family: "Rubik", sans-serif;
     size:13px;
@@ -39,6 +39,7 @@ background: $white;
   }
 
   a {
+    color:$textcolor;
     width: 100%;
     height:100%;
     padding: 10px 0 0;

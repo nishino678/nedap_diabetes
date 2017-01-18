@@ -9,17 +9,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <div class="mobile">
-      <div class="container">
-          <% flash.each do |message_type, message| %>
-            <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
-          <% end %>
-        <%= yield %>
-        <%= debug(params) if Rails.env.development? %>
-      </div>
+  <body class="<%= content_for :body_class %>">
+    <main>
+      <% flash.each do |message_type, message| %>
+        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+      <% end %>
 
-      <%= render 'shared/tabbar' %>
-    </div>
+      <%= yield %>
+      <%= debug(params) if Rails.env.development? %>
+    </main>
   </body>
 </html>

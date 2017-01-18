@@ -1,7 +1,19 @@
-<h1>Welkom bij Floor!</h1>
+<div class="section container">
+  <% content_for :body_class, 'onboarding' %>
+  <h1 class="page-title center">Welkom bij Floor!</h1>
 
-Floor en de diabetes specialisten kunnen je helpen bij diabetes problemen. <br />
-Maak een keuze voor inloggen of aanmelden en dan kunnen we beginnen. <br />
+  <p class="center">
+    Floor en de diabetes specialisten kunnen je helpen bij diabetes problemen. <br />
+    Maak een keuze voor inloggen of aanmelden en dan kunnen we beginnen. <br />
+  </p>
+</div>
 
-<%= link_to "Inloggen", login_url %>
-<%= link_to "Aanmelden", signup_path %>
+<div class="section image">
+  <img src="<%= asset_path( 'Floor_inlog.svg' ) %>" />
+</div>
+
+<div class="section action">
+  <%= link_to "Inloggen", login_path, class:"button blue" %>
+  <%= link_to "Aanmelden", signup_path, class:"button white" %>
+
+</div>

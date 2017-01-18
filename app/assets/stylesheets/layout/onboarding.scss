@@ -1,0 +1,57 @@
+.onboarding{
+
+  main{
+    height: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section {
+    flex: 1 1 auto;
+
+    &.container {
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: auto;
+    }
+
+    &.action{
+      flex-grow: 0;
+      background-color: $purplerain;
+      padding: 0 20px 10px;
+
+      &>* {
+        transform:translateY(calc( -45px / 2 ));
+      }
+
+      .button{
+        margin: 0 0 10px;
+
+        &:last-child{
+          margin:0 0 20px;
+        }
+      }
+    }
+
+    &.image{
+      background-color: $image;
+    }
+  }
+
+  .nav-bullets{
+    text-align: center;
+
+    .bullet {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+      border: 2px solid $white;
+
+      &.full {
+        background-color:$white;
+      }
+    }
+  }
+}

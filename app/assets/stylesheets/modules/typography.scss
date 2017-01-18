@@ -13,7 +13,7 @@ $basecopy: 16px;
 
 html,body{
   font-family:'Open Sans', sans-serif;
-  font-size: $basecopy; //in rem zetten//
+  font-size: $basecopy;
   line-height: 1.6em;
   color: $textcolor;
 }
@@ -26,9 +26,14 @@ h1,h2,h3,h4,h5,h6{
     color: $title;
 }
 
+p{
+  padding: 0 0 20px 0;
+}
+
 .page-title{
   font-size:24px;
   line-height:32px;
+  padding:20px 0;
 }
 
 .paragraph-title{
@@ -44,4 +49,16 @@ h1,h2,h3,h4,h5,h6{
 
 .basecopy-negative{
   color:$white;
+}
+
+.overview-list-title{
+  color: $textcolor;
+  font:{
+    family:'Open Sans', sans-serif;
+    size: $basecopy;
+  }
+}
+
+.center{
+  text-align: center;
 }

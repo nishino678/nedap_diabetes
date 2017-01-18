@@ -1,2 +1,28 @@
-<%= f.text_field :firstname, placeholder: "Voornaam.." %> <br />
+<div class="section container">
+  <%= link_to 'vorige', 'javascript:history.go(-1);', class:"icon back grey" %>
+  <% provide(:button_text, "Aanmelden") %>
+  <h1 class="page-title center">Aanmelden</h1>
+  <p class="center">
+    Voor we kunnen beginnen heb ik nog wat gegevens van je nodig.
+    Het invullen is zo klaar.
+  </p>
+</div>
 
+<div class="section image">
+  <img src="<%= asset_path( 'Floor_inlog.svg' ) %>" />
+</div>
+
+  <div class="section action">
+    <%= form_for @user do |f| %>
+      <%= render 'shared/error_messages' %>
+      <%= f.text_field :firstname, placeholder: "Voornaam..", class: "input" %>
+      <%= f.submit "Verder", class:"button blue" %>
+    <% end %>
+
+    <div class="nav-bullets">
+      <span class="bullet full"></span>
+      <span class="bullet"></span>
+      <span class="bullet"></span>
+    </div>
+  </div>
+</div>

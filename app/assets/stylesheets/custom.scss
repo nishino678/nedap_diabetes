@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Rubik:400,500');
 
-
-
 //components
 $checkbox: $barbie;
 $highlight: $barbie;
@@ -53,17 +51,4 @@ input {
   &.right {
     border-color:$highlight-right;
   }
-}
-
-//header
-.header{
-  position:fixed;
-  z-index:999;
-  height:40px;
-  width:100%;
-  background-color:$purplerain;
-}
-
-.logo{
-  margin: auto;
 }

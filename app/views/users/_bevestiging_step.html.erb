@@ -1,0 +1,5 @@
+<%= form_for @user do |f| %>
+  <%= render 'shared/error_messages' %>
+  <p><%= f.submit "Nee bedankt, liever niet", class:"button blue" %></p>
+  <p><%= f.submit "Ja graag, leg het me uit", class:"button blue" %></p>
+<% end %>

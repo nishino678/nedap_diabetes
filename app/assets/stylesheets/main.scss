@@ -6,8 +6,14 @@
 
 @import "../stylesheets/layout/base.scss";
 @import "../stylesheets/layout/header.scss";
+@import "../stylesheets/layout/onboarding.scss";
 @import "../stylesheets/layout/tabbar.scss";
 
+@import "../stylesheets/partials/input-fields.scss";
 @import "../stylesheets/partials/buttons.scss";
 @import "../stylesheets/partials/article.scss";
+@import "../stylesheets/partials/overview-list.scss";
+@import "../stylesheets/partials/quiz.scss";
 @import "../stylesheets/partials/checkbox.scss";
+@import "../stylesheets/partials/tags.scss";
+@import "../stylesheets/partials/source.scss";

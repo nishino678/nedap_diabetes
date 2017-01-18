@@ -20,11 +20,22 @@ class ActiveSupport::TestCase
 end
 
 class ActionDispatch::IntegrationTest
+  include FactoryGirl::Syntax::Methods
 
   # Log in as a particular user.
   def log_in_as(user, password: 'password', remember_me: '1')
     post login_path, params: { session: { email: user.email,
                                           password: password,
                                           remember_me: remember_me } }
+  end
+
+  def double_redirect
+    follow_redirect!
+    follow_redirect!
+  end
+
+  def assert_success(path)
+    get path
+    assert_response :success
   end
 end

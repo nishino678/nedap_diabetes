@@ -6,3 +6,11 @@ $box-shadow: rgba(0,0,0,.5);
   ){
     box-shadow: $hPos $vPos $blur $box-shadow;
 }
+
+@mixin transition(
+  $prop: all,
+  $duration: .2s,
+  $easing: ease-out
+){
+  transition: $prop $duration $easing;
+}

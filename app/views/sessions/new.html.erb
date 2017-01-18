@@ -1,19 +1,31 @@
-<h1>Inloggen</h1>
+<% content_for :body_class, 'onboarding' %>
 
-Welkom terug. <br >
-Na het inloggen gaan we weer van start.
+<div class=" section container">
+  <%= link_to 'vorige', 'javascript:history.go(-1);', class:"icon back grey" %>
+  <h1 class="page-title center">Inloggen</h1>
+  <p class="center">
+    Welkom terug. <br >
+    Na het inloggen gaan we weer van start.
+  </p>
+</div>
 
-<%= form_for(:session, url: login_path) do |f| %>
-  <%= f.email_field :email, placeholder: "Email.." %>
-  <br />
-  <%= f.password_field :password, placeholder: "Wachtwoord.." %>
-  <br />
-  <%= f.label :remember_me do %>
-  <%= f.check_box :remember_me %>
-  Onthoud mij <br />
-  <%= link_to 'Wachtwoord vergeten?', new_password_reset_path %>
-  <br />
-<% end %>
+<div class="section image">
+  <img src="<%= asset_path( 'Floor_inlog.svg' ) %>" />
+</div>
 
-<%= f.submit "Inloggen", class: "btn btn-primary" %>
-<% end %>
+<div class="section action">
+  <%= form_for(:session, url: login_path) do |f| %>
+    <%= f.email_field :email, placeholder: "E-mail..", class:"input" %>
+    <%= f.password_field :password, placeholder: "Wachtwoord..", class:"input" %>
+
+    <%= f.label :remember_me do %>
+    <%= f.check_box :remember_me, class:"checkbox" %>
+    Onthoud mij <br />
+
+
+    <%= link_to 'Wachtwoord vergeten?', new_password_reset_path %>
+  <% end %>
+
+  <%= f.submit "Inloggen", class: "button blue" %>
+  <% end %>
+</div>

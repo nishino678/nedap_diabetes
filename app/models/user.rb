@@ -1,22 +1,19 @@
 class User < ApplicationRecord
 	has_many :favorites
   attr_writer :current_step
-
-
   attr_accessor :remember_token, :reset_token
 	before_save { email.downcase! }
 	validates :firstname, length: { maximum: 50 }
 	validates :firstname, :email, :password, presence: true
 
-	
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 	validates :email, length: { maximum: 255 },
-						format: { with: VALID_EMAIL_REGEX }, 
+						format: { with: VALID_EMAIL_REGEX },
 						uniqueness: { case_sensitive: false }
 
   has_secure_password
   validates :password, length: { minimum: 6 }
-    
+
   # Returns the hash digest of the given string.
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
@@ -25,7 +22,7 @@ class User < ApplicationRecord
   end
 
   def favorited?(article)
-  	favorites.exists?(favorited: article)	
+  	favorites.exists?(favorited: article)
   end
 
   # Returns a random token.
@@ -72,7 +69,7 @@ class User < ApplicationRecord
   end
 
   def steps
-    %w[voornaam kennismaken email_pass]
+    %w[voornaam kennismaken email_pass bevestiging]
   end
 
   def next_step

@@ -1,12 +1,10 @@
 <% if @user.errors.any? %>
   <div id="error_explanation">
     <div class="alert alert-danger">
-      The form contains <%= pluralize(@user.errors.count, "error") %>.
+      Dit formulier bevat <%= @user.errors.count %> fout(en).
     </div>
-    <ul>
     <% @user.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+      <%= msg.capitalize %><br />
     <% end %>
-    </ul>
   </div>
 <% end %>

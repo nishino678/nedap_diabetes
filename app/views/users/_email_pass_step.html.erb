@@ -1,4 +1,16 @@
 
-<%= f.email_field :email, placeholder: "Email.." %> <br />
-<%= f.password_field :password, placeholder: "Wachtwoord.." %> <br />
-<%= f.password_field :password_confirmation, placeholder: "Bevestig wachtwoord.." %> <br />
+<%= form_for @user do |f| %>
+  <%= f.submit "Terug", :name => "back_button", class:"icon back grey" %>
+
+  <%= render 'shared/error_messages' %>
+  <%= f.email_field :email, placeholder: "Email..", class:"input" %>
+  <%= f.password_field :password, placeholder: "Wachtwoord..", class:"input" %>
+  <%= f.password_field :password_confirmation, placeholder: "Bevestig wachtwoord..", class:"input" %>
+  <%= f.submit "Verder", class:"button blue" %>
+<% end %>
+
+<div class="nav-bullets">
+  <span class="bullet full"></span>
+  <span class="bullet full"></span>
+  <span class="bullet full"></span>
+</div>

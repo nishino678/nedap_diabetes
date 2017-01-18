@@ -1,5 +1,6 @@
 <%= link_to 'Specialist toevoegen', new_specialist_path %>
 <% @specialist.each do |specialist| %>
+
 <ul>
   <%= link_to specialist.name, specialist %>
   <%= link_to 'bewerk specialist', edit_specialist_path(specialist) %>

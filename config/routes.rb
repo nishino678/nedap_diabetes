@@ -25,4 +25,5 @@ Rails.application.routes.draw do
     resources :questions
   end
   resources :password_resets,     only: [:new, :create, :edit, :update]
+  get '*unmatched_route', to: 'application#raise_not_found'
 end
