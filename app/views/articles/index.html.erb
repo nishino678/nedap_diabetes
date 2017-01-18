@@ -2,6 +2,13 @@
 <%= render 'shared/header' %>
 
 <section class="article-group">
+  <% if current_user.admin? %>
+    <div class="admin-buttons">
+      <%= link_to "Nieuw artikel", new_article_path, class:"button blue" %>
+      <%= link_to "Beheer specialisten", specialists_path, class:"button blue" %>
+    </div>
+  <% end %>
+
   <% @article.each do |article| %>
     <%= link_to article do %>
       <figure class="news-article" style="background-image: url(<%= article.article_image.url(:medium) %>);">
@@ -10,10 +17,5 @@
     <% end %>
   <% end %>
 </section>
-
-<% if current_user.admin? %>
-  <%= link_to "Nieuw artikel", new_article_path %>
-  <%= link_to "Beheer specialisten", specialists_path %>
-<% end %>
 
 <%= render 'shared/tabbar' %>
