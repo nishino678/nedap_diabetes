@@ -1,21 +1,24 @@
 <% @back_or_search = "back" %>
 <%= render 'shared/header' %>
 
-<div class="container">
-  <ul><%= image_tag @article.article_image.url(:medium) %></ul>
-  <h2 class=page-title><%= @article.title %></h2>
-  <p>Geschreven door: <%= @article.author %></p>
-  <p><%= @article.content %></p>
+<article>
+  <figure class="news-article" style="background-image: url(<%= @article.article_image.url(:medium) %>);">
+    <h2 class="title"><%= @article.title %></h2>
+  </figure>
+  <div class="container">
+    <p>Geschreven door: <%= @article.author %></p>
+    <p><%= @article.content %></p>
 
-  <span class="tags">
-    <h2 class="title">Tags bij dit artikel:</h2>
-    <ul>
-      <% @article.tags.each do |tag| %>
-      <li class="tag"><%= link_to tag.name, tag_path(tag.name) %></li>
-      <% end %>
-    </ul>
-  </span>
-</div>
+    <span class="tags">
+      <h2 class="title">Tags bij dit artikel:</h2>
+      <ul>
+        <% @article.tags.each do |tag| %>
+        <li class="tag"><%= link_to tag.name, tag_path(tag.name) %></li>
+        <% end %>
+      </ul>
+    </span>
+  </div>
+</article>
 
 <div class="quiz">
   <div class="question">

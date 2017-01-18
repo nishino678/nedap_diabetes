@@ -1,5 +1,20 @@
-<%= form_for @user do |f| %>
+
+
+<div class="section">
+  <img class="flooralone" src="<%= asset_path( 'Floor_firework.svg' ) %>" />
+</div>
+
+<div class="section container">
+  <h1 class="page-title center">
+    Gefeliciteerd, het aanmaken van een account is gelukt!
+  </h1>
+  <p class="center">Zal ik je uitleggen hoe de applicatie werkt?</p>
   <%= render 'shared/error_messages' %>
-  <p><%= f.submit "Nee bedankt, liever niet", class:"button blue" %></p>
-  <p><%= f.submit "Ja graag, leg het me uit", class:"button blue" %></p>
-<% end %>
+</div>
+
+<div class="section action">
+  <%= form_for @user do |f| %>
+  <%= f.submit "Nee bedankt, liever niet", class:"button blue" %>
+  <%= f.submit "Ja graag, leg het me uit", class:"button white" %>
+  <% end %>
+</div>

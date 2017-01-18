@@ -32,12 +32,22 @@ pre.debug_dump{
   .desktop{display:block;}
 }
 
-img {
-  width: 80%;
-  height: auto;
-  transform:translateY(calc( -45px / 2 ));
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+ul.enumeration{
+  padding: 0 0 20px 0;
 
+  li{
+    position: relative;
+    padding: 0 0 0 20px;
+    &:before {
+      padding: 5px 0 0 0;
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 10px;
+      position: absolute;
+      top: 7px;
+      left: 0;
+      background:$patrick;
+    }
+  }
 }

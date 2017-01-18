@@ -1,13 +1,25 @@
-<%= form_for @user do |f| %>
-  <%= f.submit "Terug", :name => "back_button", class:"icon back grey" %>
+<div class="section">
+  <%= form_for @user do |f| %>
+    <%= f.submit "Terug", :name => "back_button", class:"icon back grey" %>
+  <img class="flooralone" src="<%= asset_path( 'Handshake.svg' ) %>" />
+</div>
 
+<div class="section container">
+  <h1 class="page-title center">Leuk je te leren kennen <%= @user.firstname %>, Ik kan je ook op de volgende manieren helpen:</h1>
+  <ul class="enumeration">
+    <li>Adviezen van experts bewaren en daar actiepunten bij schrijven.</li>
+    <li>En ik kan je alles vertellen over diabetes in het algemeen.</li>
+  </ul>
   <%= render 'shared/error_messages' %>
-  <br />Hallo <%= @user.firstname %> leuk om kennis met je te maken!
-  <p><%= f.submit "Begrepen", class:"button blue" %></p>
-<% end %>
+</div>
 
-<div class="nav-bullets">
-      <span class="bullet full"></span>
-      <span class="bullet full"></span>
-      <span class="bullet"></span>
+<div class="section action">
+  <p><%= f.submit "verder", class:"button blue" %></p>
+  <% end %>
+
+  <div class="nav-bullets">
+    <span class="bullet full"></span>
+    <span class="bullet full"></span>
+    <span class="bullet"></span>
+  </div>
 </div>

@@ -1,20 +1,21 @@
 <% @back_or_search = "search" %>
 <%= render 'shared/header' %>
 
-<% @article.each do |article| %>
-
-<%= link_to article do %>
-  <article class="news-article", style="background: url(<%= article.article_image.url(:medium) %>)">
-    <header>
-      <h2 class="title"><%= article.title %></h2>
-    </header>
-  </article>
+<section class="article-group">
+  <% if current_user.admin? %>
+    <div class="admin-buttons">
+      <%= link_to "Nieuw artikel", new_article_path, class:"button blue" %>
+      <%= link_to "Beheer specialisten", specialists_path, class:"button blue" %>
+    </div>
   <% end %>
-<% end %>
 
-<% if current_user.admin? %>
-  <%= link_to "Nieuw artikel", new_article_path %>
-  <%= link_to "Beheer specialisten", specialists_path %>
-<% end %>
+  <% @article.each do |article| %>
+    <%= link_to article do %>
+      <figure class="news-article" style="background-image: url(<%= article.article_image.url(:medium) %>);">
+        <h2 class="title"><%= article.title %></h2>
+      </figure>
+    <% end %>
+  <% end %>
+</section>
 
 <%= render 'shared/tabbar' %>

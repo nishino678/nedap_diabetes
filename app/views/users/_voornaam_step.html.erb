@@ -1,15 +1,13 @@
-<div class="section container">
+<div class="section">
   <%= link_to 'vorige', 'javascript:history.go(-1);', class:"icon back grey" %>
-  <% provide(:button_text, "Aanmelden") %>
-  <h1 class="page-title center">Aanmelden</h1>
-  <p class="center">
-    Voor we kunnen beginnen heb ik nog wat gegevens van je nodig.
-    Het invullen is zo klaar.
-  </p>
+  <img class="flooralone" src="<%= asset_path( 'Floor-smile.svg' ) %>" />
 </div>
 
-<div class="section image">
-  <img src="<%= asset_path( 'Floor_inlog.svg' ) %>" />
+<div class="section container">
+  <h1 class="page-title center">
+    Even voorstellen ik ben Floor,
+    Hoe heet jij?
+  </h1>
 </div>
 
   <div class="section action">
