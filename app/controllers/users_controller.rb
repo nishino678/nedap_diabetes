@@ -29,6 +29,7 @@ class UsersController < ApplicationController
           @user.next_step
         end
       elsif @user.last_step?
+
         @user.save if @user.valid?
       else
         @user.next_step
@@ -80,7 +81,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:firstname, :email, :password, :password_confirmation)
+      params.require(:user).permit(:firstname, :email, :password)
     end
 
     def correct_user
