@@ -14,3 +14,13 @@ $box-shadow: rgba(0,0,0,.5);
 ){
   transition: $prop $duration $easing;
 }
+
+@mixin animation (
+    $animation-name,
+    $duration: 1s,
+    $delay: 0s
+  ){
+  -webkit-animation: $animation-name $duration $delay forwards;
+  animation: $animation-name $duration $delay forwards;
+}
+

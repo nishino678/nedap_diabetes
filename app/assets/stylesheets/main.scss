@@ -1,21 +1,27 @@
-@import "../stylesheets/vendors/reset.scss";
+// @import "../stylesheets/vendors/reset.scss";
 
-@import "../stylesheets/modules/mixins.scss";
-@import "../stylesheets/modules/colors.scss";
-@import "../stylesheets/modules/typography.scss";
+// @import "../stylesheets/modules/mixins.scss";
+// @import "../stylesheets/modules/colors.scss";
+// @import "../stylesheets/modules/typography.scss";
 
-@import "../stylesheets/layout/base.scss";
-@import "../stylesheets/layout/header.scss";
-@import "../stylesheets/layout/onboarding.scss";
-@import "../stylesheets/layout/tabbar.scss";
+// @import "../stylesheets/layout/base.scss";
+// @import "../stylesheets/layout/header.scss";
+// @import "../stylesheets/layout/onboarding.scss";
+// @import "../stylesheets/layout/tabbar.scss";
 
-@import "../stylesheets/partials/images.scss";
-@import "../stylesheets/partials/input-fields.scss";
-@import "../stylesheets/partials/buttons.scss";
-@import "../stylesheets/partials/article.scss";
-@import "../stylesheets/partials/overview-list.scss";
-@import "../stylesheets/partials/quiz.scss";
-@import "../stylesheets/partials/checkbox.scss";
-@import "../stylesheets/partials/tags.scss";
-@import "../stylesheets/partials/source.scss";
-@import "../stylesheets/partials/error_messages.scss";
+// @import "../stylesheets/partials/images.scss";
+// @import "../stylesheets/partials/input-fields.scss";
+// @import "../stylesheets/partials/buttons.scss";
+// @import "../stylesheets/partials/article.scss";
+// @import "../stylesheets/partials/overview-list.scss";
+// @import "../stylesheets/partials/quiz.scss";
+// @import "../stylesheets/partials/checkbox.scss";
+// @import "../stylesheets/partials/tags.scss";
+// @import "../stylesheets/partials/source.scss";
+// @import "../stylesheets/partials/messages.scss";
+// @import "../stylesheets/partials/animations.scss";
+
+@import "../stylesheets/vendors/*";
+@import "../stylesheets/modules/*";
+@import "../stylesheets/layout/*";
+@import "../stylesheets/partials/*";
