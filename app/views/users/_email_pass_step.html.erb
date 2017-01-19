@@ -1,9 +1,7 @@
-
-
+<%= form_for @user do |f| %>
+  <%= f.submit "Terug", :name => "back_button", class:"icon back grey" %>
 
 <div class="section container">
-  <%= form_for @user do |f| %>
-    <%= f.submit "Terug", :name => "back_button", class:"icon back grey" %>
   <h1 class="page-title center">Aanmelden</h1>
   <p class="center">
     Voor we kunnen beginnen heb ik nog wat gegevens van je nodig.
@@ -28,4 +26,3 @@
     <span class="bullet full"></span>
   </div>
 </div>
-mter

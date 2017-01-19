@@ -17,3 +17,50 @@
     border-color:blue;
   }
 }
+
+.form{
+  padding: 5px 0;
+
+  input[type="text"]{
+    background-color:$white;
+    width: 100%;
+    padding:5px 20px 5px 20px;
+    border: 1px solid $white;
+    border-radius:30px;
+    outline: none;
+    font-size:$basecopy;
+    @include box-shadow();
+    margin: 0 0 10px 0 ;
+  }
+
+  input[type="submit"]{
+    @include box-shadow();
+    display:inline-block;
+    width: 100%;
+    padding:10px 20px;
+    border-radius:30px;
+    margin:5px 0;
+    border: 0;
+    background:$blueberry;
+    color:$white;
+    text-align:center;
+
+    font:{
+      family: 'Rubik',sans-serif;
+      weight: 500;
+      size:18px;
+    }
+  }
+
+  textarea{
+    background-color:$white;
+    width: 100%;
+    padding:5px 20px 5px 20px;
+    border: 1px solid $white;
+    border-radius:16px;
+    outline: none;
+    font-size:$basecopy;
+    @include box-shadow();
+    margin: 0 0 10px 0 ;
+  }
+}

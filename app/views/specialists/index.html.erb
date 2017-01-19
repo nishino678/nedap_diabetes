@@ -1,10 +1,16 @@
-<%= link_to 'Specialist toevoegen', new_specialist_path %>
-<% @specialist.each do |specialist| %>
+<% @back_or_search = "back" %>
+<%= render 'shared/header' %>
 
-<ul>
-  <%= link_to specialist.name, specialist %>
-  <%= link_to 'bewerk specialist', edit_specialist_path(specialist) %>
-  <%= link_to 'verwijder specialist', specialist, method: :delete,
-                                  data: { confirm: "Weet je het zeker?" } %>
-</ul>
-<% end  %>
+<div class="specialisten admin-buttons">
+  <%= link_to 'Specialist toevoegen', new_specialist_path, class:"button blue" %>
+</div>
+
+<div class="specialist-group">
+  <% @specialist.each do |specialist| %>
+    <ul class="specialist">
+      <li><%= link_to specialist.name, specialist %></li>
+      <li class="admin-buttons"><%= link_to 'bewerk specialist', edit_specialist_path(specialist), class:"button blue" %></li>
+      <li class="admin-buttons"><%= link_to 'verwijder specialist', specialist, method: :delete, data: { confirm: "Weet je het zeker?" }, class:"button white"%></li>
+    </ul>
+  <% end  %>
+</div>
