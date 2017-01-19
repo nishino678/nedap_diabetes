@@ -15,6 +15,7 @@
 .header .icon.search {
     display: block;
     position: relative;
+    flex-basis: 40px;
 }
 
 .icon.search:before {
@@ -23,13 +24,15 @@
     color: white;
     position: absolute;
     font-size: 25px;
-    padding: 5px 0 0 20px;
+    padding: 0 0 0 20px;
+    line-height: 12px;
 }
 
 .header .icon.menu {
     color: transparent !important;
     display: block;
     position: relative;
+    flex-basis: 40px;
 }
 
 .icon.menu:before {
@@ -39,6 +42,7 @@
     position: absolute;
     font-size: 25px;
     padding: 5px 0 0 0;
+    flex-basis: 40px;
 }
 
 .header .icon.back {

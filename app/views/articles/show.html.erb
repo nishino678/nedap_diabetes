@@ -17,6 +17,7 @@
         <% end %>
       </ul>
     </span>
+    
     <% if current_user.favorited?(@article) %>
     <%= link_to "Favoriet verwijderen", article_favorite_path(@article), class:"button blue favorite-active", method: :delete %>
     <% else %>
