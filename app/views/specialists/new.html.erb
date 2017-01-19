@@ -1,2 +1,13 @@
+<% content_for :body_class, 'specialist-new' %>
+
+<% @back_or_search = "back" %>
+<%= render 'shared/header' %>
+
 <% provide(:button_text, 'Specialist aanmaken') %>
-<%= render 'form' %>
+<section>
+  <div class="specialist-edit">
+    <div class="form">
+      <%= render 'form' %>
+    </div>
+  </div>
+</section>

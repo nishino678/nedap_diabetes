@@ -1,3 +1,9 @@
-<ul> <%= @specialist.name %><br /> </ul>
-<ul> <%= @specialist.profession %><br /> </ul>
-<ul> <%= @specialist.bio %><br /> </ul>
+<% @back_or_search = "back" %>
+<%= render 'shared/header' %>
+
+<br>
+<ul class="container specialist-bio">
+  <li><lable>Name: </lable><%= @specialist.name %></li>
+  <li><lable>Beroep: </lable><%= @specialist.profession %></li>
+  <li><lable>Bio: </lable><%= @specialist.bio %></li>
+</ul>
