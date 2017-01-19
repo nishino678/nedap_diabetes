@@ -12,7 +12,7 @@
 }
 
 
-.header .icon.search {
+.header.icon.search {
     display: block;
     position: relative;
 }
@@ -23,7 +23,8 @@
     color: white;
     position: absolute;
     font-size: 25px;
-    padding: 5px 0 0 20px;
+    padding: 0 0 0 20px;
+    line-height: 12px;
 }
 
 .header .icon.menu {
@@ -78,6 +79,9 @@
 
 .logo{
   color:$white;
+  position: absolute;
+  transform: translateX(-50%);
+  left:50%;
 }
 
 .search-bar{
