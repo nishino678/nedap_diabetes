@@ -8,7 +8,7 @@
 <%= content.file_field :article_image %><br />
 <%= content.text_field :title, placeholder: 'Berichttitel..' %><br />
 <%= content.text_field :author, placeholder: 'Auteur..' %><br />
-<%= content.text_area :content, placeholder: 'Origineel nieuwsbericht..' %><br />
+<%= content.text_area :content, id: "wysiwyg" %><br />
 <%= content.text_field :source, placeholder: 'Bron nieuwsbericht..' %><br />
 <%= content.text_field :all_tags, placeholder: "Tags separated with comma" %>
 <h2> Vragen bij artikel </h2>
@@ -26,3 +26,15 @@
 <%= content.submit "Publiceer artikel" %>
 <%= render 'shared/tabbar' %>
 <% end %>
+
+<script>
+$('#wysiwyg').froalaEditor({
+  placeholderText: 'Origineel nieuwsbericht..',
+  inlineMode: false,
+  heightMin: '300px',
+  toolbarButtons: ['bold', 'italic', 'underline', 'quote', '|', 'paragraphFormat', '|', 'outdent', 'indent',],
+  toolbarButtonsMD: ['bold', 'italic', 'underline', 'quote', '|', 'paragraphFormat', '|', 'outdent', 'indent',],
+  toolbarButtonsSM: ['bold', 'italic', 'underline', 'quote', '|', 'paragraphFormat', '|', 'outdent', 'indent',],
+  toolbarButtonsXS: ['bold', 'italic', 'underline', 'quote', '|', 'paragraphFormat', '|', 'outdent', 'indent',],
+})
+</script>
