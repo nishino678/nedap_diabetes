@@ -8,7 +8,6 @@
   <div class="container">
     <p>Geschreven door: <%= @article.author %></p>
     <%= @article.content.html_safe %>
-
     <span class="tags">
       <h2 class="title">Tags bij dit artikel:</h2>
       <ul>
@@ -66,8 +65,7 @@
   </ul>
 
   <span class="article-source">
-    <h2>Bron:</h2>
-    <%= @article.source %>
+    <h2><%= link_to("Klik hier voor het originele artikel", @article.source) %></h2>  
   </span>
 </div>
 
