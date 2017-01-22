@@ -20,6 +20,7 @@ def index
     flash.clear
     @article = Array.new
     params[:tag].split(' ').each do | tag |
+      tag.downcase!
       unless Article.tagged_with(tag).nil?
         @article = @article | Article.tagged_with(tag)
       end
