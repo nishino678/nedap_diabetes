@@ -16,30 +16,36 @@ class ArticlesController < ApplicationController
 end
 
 def index
-  @article = if params[:tag]
-  flash.clear
-  Article.tagged_with(params[:tag].downcase).order('created_at DESC')
-
-else
-  @article = Article.all.order('created_at DESC')
-end
- rescue NoMethodError
-    redirect_to articles_path, :flash => { :error => "Geen artikel gevonden met deze tag." }
+  if params[:tag].present?
+    flash.clear
+    @article = Array.new
+    params[:tag].split(' ').each do | tag |
+      unless Article.tagged_with(tag).nil?
+        @article = @article | Article.tagged_with(tag)
+      end
+      unless @article.any?
+        flash[:error] = "Geen artikel gevonden met deze tag."
+        @article = Article.all.order('created_at DESC')
+      end
+    end
+  else
+    @article = Article.all.order('created_at DESC')
+  end
 end
 
 def edit
   @article = Article.find(params[:id])
 end
 
-  def update
-    @article = Article.find(params[:id])
-      if @article.update_attributes(news_params)
-      flash[:succes] = "Artikel bijgewerkt"
-      redirect_to @article
-    else
-      render 'edit'
-    end
+def update
+  @article = Article.find(params[:id])
+    if @article.update_attributes(news_params)
+    flash[:succes] = "Artikel bijgewerkt"
+    redirect_to @article
+  else
+    render 'edit'
   end
+end
 
 
 def create
