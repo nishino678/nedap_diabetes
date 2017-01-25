@@ -1,16 +1,24 @@
 // Flash messages JS
-var elem = document.getElementsByClassName("alert");
-
-function listen(elem:any) {
+function fadeOutAlert() {
+  var elem = document.getElementsByClassName("alert");
   for (var i = 0; i < elem.length; ++i) {
     elem[i].addEventListener('click', function(){
       this.classList.add("fade-out");
     });
   }
 }
+// Search bar
+function expandSearchBar() {
+  var touchTarget = document.getElementsByClassName("js-search"),
+      searchBar = document.getElementById("search-bar");
+  for (var i = 0; i < touchTarget.length; ++i) {
+    touchTarget[i].addEventListener('click', function(){
+      searchBar.classList.toggle("open");
+    });
+  }
+}
 
-///////////////////////// QUIZIES
-
+// QUIZIES
 function answerListener(){
   var answers = document.getElementsByClassName('answer');
   for (var i = 0; i < answers.length; ++i) {
@@ -51,7 +59,8 @@ function quizListener(){
 }
 
 window.onload = function() {
-  listen(elem);
+  fadeOutAlert();
   // quizListener();
+  expandSearchBar();
   answerListener();
  };

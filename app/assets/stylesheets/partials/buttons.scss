@@ -24,6 +24,8 @@
   }
   &.favorite{
     position: relative;
+    text-align: left;
+
     &:before {
       content: "";
       width: 25px;
@@ -37,6 +39,7 @@
     }
     &-active{
       position: relative;
+      text-align: left;
 
       &:before {
         content: "";

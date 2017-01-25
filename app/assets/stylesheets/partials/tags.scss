@@ -1,6 +1,13 @@
 .tags{
   display: block;
   padding:0 0 20px 0;
+
+  .title {
+    position: initial;
+    padding: 10px 0px;
+    color: $textcolor;
+    background: none;
+  }
 }
 
 .tag{
