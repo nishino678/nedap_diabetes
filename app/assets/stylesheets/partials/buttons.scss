@@ -54,11 +54,15 @@
 }
 
 .admin-buttons{
-  margin: 0 auto;
-  width: 60%;
-  max-width: 200px;
+  margin: auto;
+  width: 90%;
+
 
   .button{
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(50% - 20px);
+    float: left;
     padding: 5px 10px;
     font-size: 12px;
   }
