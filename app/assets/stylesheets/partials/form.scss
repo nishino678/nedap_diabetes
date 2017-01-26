@@ -1,0 +1,10 @@
+.new_user {
+  @include display-flex;
+  @include flex-direction-column;
+  height: 100%;
+
+  .icon.back.grey {
+    -ms-flex-item-align: start;
+    align-self:     flex-start;
+  }
+}

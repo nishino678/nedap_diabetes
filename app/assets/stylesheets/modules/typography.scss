@@ -26,6 +26,15 @@ h1,h2,h3,h4,h5,h6{
     color: $title;
 }
 
+em{
+  font-style: italic;
+}
+
+
+strong, b{
+  font-weight: bold;
+}
+
 p{
   padding: 0 0 20px 0;
 }

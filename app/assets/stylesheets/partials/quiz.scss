@@ -15,5 +15,21 @@
     family: "Rubik";
     weight:500;
   }
+  border-top: 1px solid transparent;
   border-bottom: 1px solid $lines;
+  @include transition;
+
+  &.correct {
+    background:rgba($purplerain, .3);
+    border-top: 1px solid $purplerain;
+    border-bottom: 1px solid $purplerain;
+    color:$purplerain;
+  }
+
+  &.wrong {
+    background:rgba($highlight, .3);
+    border-top: 1px solid $highlight;
+    border-bottom: 1px solid $highlight;
+    color:$highlight;
+  }
 }

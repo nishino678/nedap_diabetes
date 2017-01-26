@@ -2,11 +2,10 @@
 <%= render 'shared/header' %>
 
 <% @users.each do |user| %>
-<li>
-<%= link_to user.firstname, user %>
-<%= link_to 'verwijder gebruiker', user, method: :delete,
-                                  data: { confirm: "Weet je het zeker?" } %>
-</li>
+  <li>
+    <%= link_to user.firstname, user %>
+    <%= link_to 'verwijder gebruiker', user, method: :delete, data: { confirm: "Weet je het zeker?" } %>
+  </li>
 <% end %>
 
 <%= render 'shared/tabbar' %>

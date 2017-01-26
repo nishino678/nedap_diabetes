@@ -1,9 +1,11 @@
 class Article < ApplicationRecord
+  require 'sanitize'
+  before_save :sanitize_content
   validates :all_tags, :specialist, :title, :author, :content, :source, :explanation, presence: true
   validates :specialist_id, presence: true, numericality: { only_integer: true }
   #images
   validates :article_image, attachment_presence: true
-  validates_with AttachmentSizeValidator, attributes: :article_image, less_than: 1.megabytes
+  validates_with AttachmentSizeValidator, attributes: :article_image, less_than: 5.megabytes
 
   has_many :questions, inverse_of: :article, dependent: :destroy
   has_many :taggings
@@ -13,6 +15,10 @@ class Article < ApplicationRecord
 
   has_attached_file :article_image, styles: { medium: "720x180#", thumb: "100x100>" }, default_url: ":style/missing.png"
   validates_attachment_content_type :article_image, content_type: /\Aimage\/.*\z/
+
+  def sanitize_content
+    Sanitize.fragment(content, Sanitize::Config::RELAXED)
+  end
 
   def all_tags=(names)
     self.tags = names.split(',').map do |name|
@@ -25,6 +31,11 @@ class Article < ApplicationRecord
   end
 
   def self.tagged_with(name)
-    Tag.find_by(name: name).articles
+    if Tag.find_by_name(name)
+      Tag.find_by_name(name).articles
+    else
+      return
+    end
   end
+  
 end

@@ -1,4 +1,6 @@
 
-<%= f.text_field :content, placeholder: 'Antwoord..' %>
-<%= f.check_box :correct %>
-<%= f.label :correct, "Juist antwoord" %> <br />
+<%= f.text_field :content, placeholder: 'Antwoord..', class: "input" %>
+<div class="checkbox">
+  <%= f.check_box :correct %>
+  <%= f.label :correct, "Juist antwoord" %> <br />
+</div>

@@ -2,19 +2,19 @@
 <%= render 'shared/header' %>
 
 <div class="container">
-  <h1 class="page-title center"> Hallo, <%= @user.firstname %> </h1>
-  <p class="center">je kan hier uitloggen en je account wijzigen</p>
-
-  <%= link_to "Account wijzigen", edit_user_path(current_user), class:"button" %>
-  <%= link_to "Uitloggen", logout_path, method: "delete", class:"button" %>
+  <% if current_user == @user %>
+    <h1 class="page-title center"> Hallo, <%= @user.firstname %> </h1>
+    <p class="center">je kan hier uitloggen en je account wijzigen</p>
+    <%= link_to "Account wijzigen", edit_user_path(current_user), class:"button" %>
+    <%= link_to "Uitloggen", logout_path, method: "delete", class:"button" %>
+  <% else %>
+    <%= link_to "Account wijzigen", edit_user_path(@user), class:"button" %>
+  <% end %>
+  <% if current_user.admin? %>
+    <div class="admin-buttons">
+      <%= link_to "Gebruikersoverzicht", users_path, class:"button blue" %>
+    </div>
+  <% end %>
 </div>
-
-<% if current_user.admin? %>
-  <br/>
-  <p>Deze gebruiker is een admin.</p> 
-  <div class="admin-buttons">
-    <%= link_to "Gebruikersoverzicht", users_path, class:"button blue" %>
-  </div>
-<% end %>
 
 <%= render 'shared/tabbar' %>

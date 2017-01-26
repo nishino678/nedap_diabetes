@@ -13,6 +13,9 @@ main {
 *::after {
   box-sizing: border-box;
 }
+*::selection {
+  background:transparent;
+}
 
 
 .container{
@@ -50,5 +53,70 @@ ul.enumeration{
       left: 0;
       background:$patrick;
     }
+  }
+}
+
+
+// REMINDER MOVE TO CORRECT SCSS FILE
+
+//specialist index
+.specialisten{
+  padding: 20px 0;
+}
+.specialist{
+  padding: 5px 10px;
+  .admin-buttons{
+    padding: 0;
+  }
+  li:first-child{
+    color:$barbie 1px solid;
+    text-align: center;
+    border-bottom:$barbie 1px solid;
+  }
+
+  &:nth-child(odd){
+    background: $odd;
+  }
+  &:nth-child(even){
+    background: $even;
+  }
+}
+
+//specialist bio page
+.specialist-bio{
+  margin: 10px 0;
+
+  li{
+    margin: 10px 0;
+  }
+  lable{
+    color: $barbie;
+  }
+}
+
+//specialist edit page
+.specialist-new{
+  main{
+    padding: 0;
+    display: block;
+    position: relative;
+    height: 100%;
+  }
+  section{
+    position: absolute;
+    display: block;
+    width: 100%;
+    bottom: 0;
+  }
+}
+
+.specialist-edit {
+  background: $purplerain;
+  padding: 20px 0 60px;
+  .form{
+    margin: -38px 0 0 0;
+  }
+  form{
+    padding: 0 20px;
   }
 }

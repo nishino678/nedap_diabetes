@@ -1,0 +1,8 @@
+.fade-out {
+  opacity: 0;
+  @include animation(displayNone);
+}
+
+@keyframes displayNone {
+  to{visibility: hidden}
+}
