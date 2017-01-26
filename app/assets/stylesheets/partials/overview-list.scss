@@ -23,6 +23,7 @@
   }
 
   .delete{
+    display: none;
     position: absolute;
     top: 0;
     left: 100%;
@@ -44,7 +45,7 @@
   }
 
   .wrapper {
-    transform:translatex(-100px);
+    // transform:translatex(-100px);
     @include transition;
   }
 

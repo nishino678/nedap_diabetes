@@ -63,7 +63,7 @@
     color: $lines;
     display: block;
     position: relative;
-    padding: 11px 0 0 10px;
+    padding: 11px 0 0 30px;
     font-family: "Rubik"
 }
 
@@ -73,7 +73,7 @@
     color: $lines;
     position: absolute;
     font-size: 35px;
-    left: -18px;
+    left: 0;
     top: 20px;
 }
 
@@ -84,10 +84,17 @@
   left:50%;
 }
 
-.search-bar{
+#search-bar{
   width:100%;
   position: fixed;
+  z-index: 99;
   top:40px;
-  padding:15px 20px 10px 20px;
+  transform:translateY(-50px);
+  padding:10px 20px 0 20px;
   background-color: $subheader;
+  @include transition;
+
+  &.open {
+    transform:translateY(0);
+  }
 }

@@ -1,21 +1,22 @@
 <% @back_or_search = "back" %>
 <%= render 'shared/header' %>
 
-<article>
+<article class="">
   <figure class="news-article" style="background-image: url(<%= @article.article_image.url(:medium) %>);">
     <h2 class="title"><%= @article.title %></h2>
   </figure>
-  <div class="container">
-    <p>Geschreven door: <%= @article.author %></p>
-    <%= @article.content.html_safe %>
-    <span class="tags">
+
+  <div class="news-article__container">
+    <!-- <p>Geschreven door: <%= @article.author %></p> -->
+    <p><%= @article.content.html_safe %></p>
+    <div class="tags">
       <h2 class="title">Tags bij dit artikel:</h2>
       <ul>
         <% @article.tags.each do |tag| %>
         <li class="tag"><%= link_to tag.name, tag_path(tag.name) %></li>
         <% end %>
       </ul>
-    </span>
+    </div>
 
     <% if current_user.favorited?(@article) %>
       <%= link_to "Favoriet verwijderen", article_favorite_path(@article), class:"button blue favorite-active", method: :delete %>
@@ -65,7 +66,7 @@
   </ul>
 
   <span class="article-source">
-    <h2><%= link_to("Klik hier voor het originele artikel", @article.source) %></h2>  
+    <h2><%= link_to("Klik hier voor het originele artikel", @article.source) %></h2>
   </span>
 </div>
 
