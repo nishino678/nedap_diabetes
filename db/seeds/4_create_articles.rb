@@ -195,3 +195,157 @@ Article.create!(
    }
  ]
 )
+
+Article.create!(
+  article_image: File.open(File.join(Rails.root, 'db', 'seed_images', 'bewegen.jpg')),
+  title: "Beter eten en meer bewegen kunnen diabetes type 2 genezen",
+  author: "NOS.nl",
+  content: "
+  <p><b>Een groot deel van de bijna één miljoen mensen met diabetes type 2, kan genezen als ze gezonder gaan eten en meer gaan bewegen. Dat kan de samenleving een besparing opleveren van 2,7 miljard euro, stelt internist Hanno Pijl van het Leids Universitair Medisch Centrum.</b></p>
+  <p>Uit onderzoek van onder meer het LUMC, TNO en zorgverzekeraar VGZ blijkt dat tot 40 procent van de patiënten van diabetes type 2 kan afkomen als zij hun leefstijl drastisch omgooien. Het gaat dan voornamelijk om mensen die geen insuline spuiten, maar volgens Pijl komt zelfs de groep die dat wel doet voor genezing in aanmerking.</p>
+  <p>Doordat patiënten minder insuline en medicijnen nodig hebben, kan bijna drie miljard euro worden bespaard. <em>'Zelfs als dat niet lukt en het is maar 10 procent, scheelt dat al enorm veel'</em>, zegt Pijl.</p>
+  <h1>Vaker vergoed</h1>
+  <p>Ook zorgverzekeraars zetten nu meer in op leefstijlbegeleiding voor diabetes type 2-patiënten. Waar de ziekte eerder nog werd gezien als een kwestie van 'eigen schuld, dikke bult', worden voedingsprogramma's voor diabetespatiënten nu steeds vaker vergoed.</p>
+  <p>Zo zit de begeleiding van Stichting Voeding Leeft vanaf januari 2017 in het pakket bij zorgverzekeraar VGZ. In het programma Keer Diabetes Om krijgen diabetes type 2-patiënten begeleiding op het gebied van eten en sport.</p>
+  ",
+  source: "http://nos.nl/artikel/2144943-beter-eten-en-meer-bewegen-kunnen-diabetes-type-2-genezen.html",
+  specialist_id: "1",
+  all_tags: "diabetes, bewegen, leefstijl, type2, zorgverzekering, genezing",
+  explanation: "Gezonder eten en meer beweging krijgen kan geen kwaad. Zorg er wel voor dat je jezelf niet overbelast zodat je wellicht juist in bed beland.",
+  questions_attributes: [
+  {
+     content: 'Vraag 1',
+     answers_attributes: [
+       {content: "Antwoord 1 op vraag 1",
+        correct: true},
+       {content: "Antwoord 2 op vraag 1"},
+       {content: "Antwoord 3 op vraag 1"}
+     ]
+   },
+
+   {
+     content: 'Vraag 2',
+     answers_attributes: [
+       {content: "Antwoord 1 op vraag 2"},
+       {content: "Antwoord 2 op vraag 2",
+        correct: true},
+       {content: "Antwoord 3 op vraag 2"}
+     ]
+   },
+
+   {
+     content: 'Vraag 3',
+     answers_attributes: [
+       {content: "Antwoord 1 op vraag 3"},
+       {content: "Antwoord 2 op vraag 3"},
+       {content: "Antwoord 3 op vraag 3",
+        correct: true}
+     ]
+   }
+ ]
+)
+
+Article.create!(
+  article_image: File.open(File.join(Rails.root, 'db', 'seed_images', 'patat.jpg')),
+  title: "Obesitas is het nieuwe roken, ontmoediging heeft effect",
+  author: "NOS.nl",
+  content: "
+  <p><b><em<'Diabetes was de belangrijkste reden voor mijn maagverkleiningsoperatie, ik kon niet meer zonder insuline.'</em> Een aantal jaar geleden was Marjo Jager nog fors zwaarder. <em>'Ik had diabetes, hoge bloeddruk, en ik heb een vorm van reuma, daarvoor was het beter om af te vallen.'</em></b></p>
+  <p>Ze onderging een maagverkleining en heeft nu geen diabetes meer. Toch is een operatie volgens haar geen wondermiddel. <em>'Het is een hulpmiddel, geen oplossing. Het is een keuze voor de rest van je leven en ik moet me voortaan aan bepaalde leefregels houden.'</em></p>
+  <p>Het aantal Nederlanders met overgewicht dat de maag laat verkleinen groeit. Afgelopen week luidden vier chirurgen gespecialiseerd in maagverkleiningsoperaties uit het Slotervaart Ziekenhuis in Amsterdam de noodklok. <em>'Wij verrichten dertig operaties per week, maar kunnen de toeloop van patiënten niet aan'</em>, schreven ze in de Volkskrant. </p>
+  <p>Het probleem is volgens de artsen niet met een operatie op te lossen; maatregelen tegen obesitas zijn hard nodig. <em>'Wij pleiten voor een politiek en maatschappelijk Obesitas Offensief.'</em> De artsen vinden dat de politiek en overheid zich juist wel moeten bemoeien met de leefwijze van burgers. </p>
+  <p><em>'Alleen door hun inzet kan de noodzakelijke gedragsverandering tot stand komen. De overheid kan ons geen gezonde levensstijl opleggen, maar kan ons wel informeren en verleiden tot betere keuzes.'</em></p>
+  <p>De Wereldgezondheidsorganisatie (WHO) waarschuwde al eerder voor een 'wereldwijde obesitas-epidemie'. Sinds dit voorjaar zijn er op de wereld meer mensen met overgewicht dan met ondergewicht. De meeste mensen met flink overgewicht wonen in de Verenigde Staten en China.</p>
+  <p>In Nederland heeft meer dan de helft van de bevolking last van overgewicht en lijden 1,7 miljoen mensen aan obesitas. Dit leidt tot allerlei hart- en vaatziekten, diabetes type 2 en vormen van kanker.</p>
+  <p>Een van de belangrijkste oorzaken van gewichtstoename zijn frisdranken. Nederlanders drinken jaarlijks meer dan 90 liter frisdrank per persoon. Frisdranken bevatten veel suiker. In een literfles Fanta zitten 23 klontjes suiker, in een liter cola zelfs 26.</p>
+  <p>In landen als Hongarije en Mexico is de afgelopen jaren een suikertaks ingevoerd. Dat werkt, blijkt uit onderzoek van de WHO. Door de prijs van suikerhoudende drankjes te verhogen, gaan mensen er minder van drinken.</p>
+  <p>De frisdrankindustrie heeft alles liever dan een suikertaks. <em>'De voedingsmiddelenindustrie erkent het probleem, maar ziet zichzelf niet als de boze heks uit het bekende sprookje'</em>, zegt Philip den Ouden, directeur van de Federatie Nederlandse Levensmiddelen Industrie (FNLI)</p>
+  <p>Een suikertaks heeft maar één bewezen effect, zegt Den Ouden. <em>'Ze vergroten de inkomsten van de overheid. Er zijn geen bewijzen voor het verbeteren van de volksgezondheid.'</em> Hij noemt de WHO naïef. <em>'Er wordt gegrepen naar een makkelijk instrument voor complexe problemen.'</em></p>
+  <p>Toch ligt volgens de chirurgen van het Slotervaart Ziekenhuis de sleutelrol bij de voedingsindustrie. <em>'Gezondheid is niet het primaire belang van de voedingsindustrie. Alleen stevige overheidsmaatregelen kunnen de industrie dwingen goede stappen te nemen.'</em></p>
+  <p>Daar is Marjo Jager het mee eens. <em>'Alles wat je in pakjes en zakjes koopt, wordt zoeter en zouter. Een verantwoorde keuze wordt steeds lastiger. Er zijn alleen al twintig benamingen voor suiker. De overheid moet dat inzichtelijker maken.'</em></p>
+  <p>De 'boterzachte' convenanten die nu worden gesloten met fabrikanten hebben volgens de chirurgen weinig effect. De overheid moet veel meer doen aan voorlichting en educatie. <em>'Obesitas is het nieuwe roken, een ontmoedigingsbeleid heeft effect. Net als bij roken kan dit ook werken bij ongezond eten.</em></p>
+  ",
+  source: "http://nos.nl/nieuwsuur/artikel/2139422-obesitas-is-het-nieuwe-roken-ontmoediging-heeft-effect.html",
+  specialist_id: "1",
+  all_tags: "diabetes, type1, type2, ontmoediging, reuma, bloeddruk, nederland, overgewicht, obesitas, suiker",
+  explanation: "Vul mij aan.",
+  questions_attributes: [
+  {
+     content: 'Vraag 1',
+     answers_attributes: [
+       {content: "Antwoord 1 op vraag 1",
+        correct: true},
+       {content: "Antwoord 2 op vraag 1"},
+       {content: "Antwoord 3 op vraag 1"}
+     ]
+   },
+
+   {
+     content: 'Vraag 2',
+     answers_attributes: [
+       {content: "Antwoord 1 op vraag 2"},
+       {content: "Antwoord 2 op vraag 2",
+        correct: true},
+       {content: "Antwoord 3 op vraag 2"}
+     ]
+   },
+
+   {
+     content: 'Vraag 3',
+     answers_attributes: [
+       {content: "Antwoord 1 op vraag 3"},
+       {content: "Antwoord 2 op vraag 3"},
+       {content: "Antwoord 3 op vraag 3",
+        correct: true}
+     ]
+   }
+ ]
+)
+
+Article.create!(
+  article_image: File.open(File.join(Rails.root, 'db', 'seed_images', 'diabetes2.jpg')),
+  title: "Een op drie diabetes type 2-patiënten verandert leefstijl niet",
+  author: "ANP",
+  content: "
+  <p><b>Een derde van de mensen bij wie diabetes type 2 is vastgesteld, verandert de leefstijl niet. Dat blijkt uit onderzoek van marktonderzoeksbureau GfK in opdracht van de Nederlandse Zuivel Organisatie, dat 24 november wordt gepresenteerd in de Jaarbeurs in Utrecht. Het onderzoek is verricht onder 578 diabetes type 2-patiënten boven de 35 jaar.</b></p>
+  <p>Een op de drie (34 procent) van de diabetes type 2-patiënten geeft aan dat hun leefstijl niet is veranderd na de diagnose. Van de diabetes type 2-patiënten kampt 83 procent met overgewicht. Een minderheid volgt een dieet. Een derde geeft aan meer te willen gaan bewegen en een derde zegt meer te gaan letten op gezonde voeding.</p>
+  <h1>Mannen</h1>
+  <p>Het onderzoek geeft tevens inzicht in hoe de groep diabetes type 2-patiënten er uitziet. Zo komt diabetes type 2 vaker voor bij mannen (55 procent) dan bij vrouwen (45 procent), vaker bij laag- dan bij hoogopgeleiden en vaker bij oudere mensen. Zo'n 81 procent maakt gebruik van medicatie.</p>
+  <p>Van alle diabetes type 2-patiënten heeft 83 procent te maken met overgewicht. Zo'n 42 procent van de diabetes type 2-patiënten heeft een BMI hoger dan 30. Een kwart van hen komt na de diagnose nog aan.</p>
+  ",
+  source: "http://www.nu.nl/gezondheid/4351726/drie-diabetes-type-2-patienten-verandert-leefstijl-niet.html",
+  specialist_id: "1",
+  all_tags: "diabetes, type2, leefstijl",
+  explanation: "De informatie uit dit artikel is valide en op feiten gebaseerd.",
+  questions_attributes: [
+  {
+     content: 'Vraag 1',
+     answers_attributes: [
+       {content: "Antwoord 1 op vraag 1",
+        correct: true},
+       {content: "Antwoord 2 op vraag 1"},
+       {content: "Antwoord 3 op vraag 1"}
+     ]
+   },
+
+   {
+     content: 'Vraag 2',
+     answers_attributes: [
+       {content: "Antwoord 1 op vraag 2"},
+       {content: "Antwoord 2 op vraag 2",
+        correct: true},
+       {content: "Antwoord 3 op vraag 2"}
+     ]
+   },
+
+   {
+     content: 'Vraag 3',
+     answers_attributes: [
+       {content: "Antwoord 1 op vraag 3"},
+       {content: "Antwoord 2 op vraag 3"},
+       {content: "Antwoord 3 op vraag 3",
+        correct: true}
+     ]
+   }
+ ]
+)

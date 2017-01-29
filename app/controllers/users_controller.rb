@@ -41,7 +41,6 @@ class UsersController < ApplicationController
     else
       session[:user_step] = session[:user_params] = nil
       log_in @user
-      flash[:success] = "Account succesvol aangemaakt!"
       redirect_to articles_path
     end
   end
