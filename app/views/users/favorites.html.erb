@@ -2,7 +2,7 @@
 <%= render 'shared/header' %>
 
 <div class="container">
-  <h1 class="page-title">Favoriete artikelen van <%= @user.firstname %></h1>
+  <h1 class="page-title center">Favoriete artikelen van <%= @user.firstname %></h1>
 </div>
 
 <ul class="overview-list">
@@ -19,7 +19,7 @@
     </li>
     <% end %>
   <% else %>
-  <p class="center">Je hebt nog geen favorieten, voeg eentje toe en je kunt hem hier terugvinden!</p>
+    <p class="center">Je hebt nog geen favorieten, voeg eentje toe en je kunt hem hier terugvinden!</p>
   <% end %>
 </ul>
 

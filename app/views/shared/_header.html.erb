@@ -3,18 +3,12 @@
     <%= link_to 'terug', 'javascript:history.go(-1);', class:"icon back" %>
 
   <% elsif @back_or_search == "search" %>
-    <span class="icon search js-search"></span>
+    <%= form_tag(articles_path, :method => "get", id: "tag") do %>
+      <%= search_field_tag :tag, params[:tag], class:"input" %>  
+    <% end %>
   <% end %>
 
   <span class="logo">Floor</span>
 
   <%= link_to "Menu", current_user, class: "icon menu"  %>
 </header>
-
-<% if @back_or_search == "search" %>
-  <div id="search-bar">
-    <%= form_tag(articles_path, :method => "get", id: "tag") do %>
-      <%= text_field_tag :tag, params[:tag], placeholder: "Zoek een artikel..", class:"input" %>
-    <% end %>
-  </div>
-<% end %>

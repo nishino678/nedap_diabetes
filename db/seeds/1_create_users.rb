@@ -13,3 +13,11 @@ User.create!(
   password_confirmation: "123123",
   admin: false
  )
+
+User.create!(
+  firstname:  "Nina",
+  email: "nina@example.com",
+  password:              "123123",
+  password_confirmation: "123123",
+  admin: false
+ )
