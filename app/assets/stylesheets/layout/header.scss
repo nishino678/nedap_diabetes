@@ -13,7 +13,6 @@
   @include box-shadow;
 }
 
-
 .header.icon.search {
     display: block;
     position: relative;
@@ -85,6 +84,7 @@
   transform: translateX(-50%);
   left:50%;
   font-family: 'Courgette', cursive;
+  font-size: 20px;
 }
 
 #search-bar{

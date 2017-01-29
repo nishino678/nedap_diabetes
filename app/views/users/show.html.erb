@@ -6,7 +6,7 @@
     <h1 class="page-title center"> Hallo, <%= @user.firstname %> </h1>
     <p class="center">je kan hier uitloggen en je account wijzigen</p>
     <%= link_to "Account wijzigen", edit_user_path(current_user), class:"button" %>
-    <%= link_to "Uitloggen", logout_path, method: "delete", class:"button" %>
+    <%= link_to "Uitloggen", logout_path, method: "delete", class:"button blue" %>
   <% else %>
     <%= link_to "Account wijzigen", edit_user_path(@user), class:"button" %>
   <% end %>

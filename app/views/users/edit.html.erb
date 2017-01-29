@@ -8,7 +8,7 @@
   <%= form_for @user do |f| %>
   <%= f.email_field :email, placeholder: "Email..", class:"input" %>
   <%= f.password_field :password, placeholder: "Wachtwoord..", class:"input" %>
-  <%= f.password_field :password_confirmation, placeholder: "Bevestig wachtwoord..", class:"button blue" %>
+  <%= f.submit "Account wijzigen.", class:"button blue" %>
   <% end %>
 </div>
 <%= render 'shared/tabbar' %>

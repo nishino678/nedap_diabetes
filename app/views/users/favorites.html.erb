@@ -6,6 +6,7 @@
 </div>
 
 <ul class="overview-list">
+<% if @user.favorites.any? %>
   <% @user.favorites.each do |favorited| %>
     <li>
       <div class="wrapper">
@@ -17,6 +18,9 @@
       </div>
     </li>
     <% end %>
+  <% else %>
+  <p class="center">Je hebt nog geen favorieten, voeg eentje toe en je kunt hem hier terugvinden!</p>
+  <% end %>
 </ul>
 
 <% if @favorite %>
