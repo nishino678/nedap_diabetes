@@ -14,9 +14,8 @@ main {
   box-sizing: border-box;
 }
 *::selection {
-
+  background:transparent;
 }
-
 
 .container{
   padding: 0 20px;
