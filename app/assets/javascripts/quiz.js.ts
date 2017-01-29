@@ -64,4 +64,18 @@ window.onload = function() {
   // quizListener();
   expandSearchBar();
   answerListener();
+  console.log("test");
  };
+
+
+// var touchTarget = document.getElementsByClassName("js-search"),
+//     searchBar = document.getElementById("search-bar");
+// for (var i = 0; i < touchTarget.length; ++i) {
+//   touchTarget[i].addEventListener('click', function(){
+//     searchBar.classList.toggle("open");
+//   });
+// }
+
+// console.log(touchTarget);
+// console.log(touchTarget.length);
+// console.log(searchBar);
