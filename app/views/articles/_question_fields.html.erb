@@ -1,5 +1,5 @@
 <b>Vraag bij artikel</b><br />
-  <%= f.text_area :content, :rows => 3, class:'textarea' %><br />
+  <%= f.text_area :content, :rows => 3, class:'textarea', placeholder:"Vraag.." %>
 
   <%= f.fields_for :answers do |builder| %>
   <%= render 'answer_fields', :f => builder %>
