@@ -1,6 +1,7 @@
-
 <%= f.text_field :content, placeholder: 'Antwoord..', class: "input" %>
 <div class="checkbox">
   <%= f.check_box :correct %>
-  <%= f.label :correct, "Juist antwoord" %> <br />
+  <%= f.label :correct do %>
+    <span>Juist antwoord</span>
+  <% end %>
 </div>

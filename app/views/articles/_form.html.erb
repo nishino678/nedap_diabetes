@@ -1,16 +1,18 @@
-<%= form_for @article, html: { multipart: true } do |content| %>
-
 <% @back_or_search = "back" %>
 <%= render 'shared/header' %>
 
+<%= form_for @article, html: { multipart: true } do |content| %>
+
 <%= render 'shared/error_messages_article' %>
-<h1> Nieuw bericht toevoegen</h1>
-<%= content.file_field :article_image %><br />
-<%= content.text_field :title, placeholder: 'Berichttitel..' %><br />
-<%= content.text_field :author, placeholder: 'Auteur..' %><br />
-<%= content.text_area :content, id: "wysiwyg" %><br />
-<%= content.text_field :source, placeholder: 'Bron nieuwsbericht..' %><br />
-<%= content.text_field :all_tags, placeholder: "Tags separated with comma" %>
+<label class="custom-file-upload center">
+  Foto toevoegen
+  <%= content.file_field :article_image %><br />
+</label>
+<%= content.text_field :title, placeholder: 'Berichttitel..', class: "input" %>
+<%= content.text_field :author, placeholder: 'Auteur..', class: "input" %>
+<%= content.text_area :content, id: "wysiwyg" %>
+<%= content.text_field :source, placeholder: 'Bron nieuwsbericht..', class: "input" %>
+<%= content.text_field :all_tags, placeholder: "Tags, door komma gescheiden.", class: "input" %>
 <h2> Vragen bij artikel </h2>
 
 <%= content.fields_for :questions do |builder| %>
@@ -18,12 +20,12 @@
 <% end %>
 
 <h2>Uitleg bij artikel</h2>
-<%= content.text_area :explanation, placeholder: 'Uitleg specialist..' %><br />
+<%= content.text_area :explanation, placeholder: 'Uitleg specialist..', class:'textarea' %><br />
 
-<%= content.collection_select :specialist_id, Specialist.order(:name),:id,:name, include_blank: false %>
+<%= content.collection_select :specialist_id, Specialist.order(:name),:id,:name, {include_blank: false}, {:class => 'select'} %>
 <br />
 
-<%= content.submit "Publiceer artikel" %>
+<%= content.submit "Publiceer artikel", class:'button blue' %>
 <%= render 'shared/tabbar' %>
 <% end %>
 

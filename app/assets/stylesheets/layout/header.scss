@@ -136,7 +136,3 @@ input[type=search]:focus {
   cursor: auto;
   @include box-shadow();
 }
-
-input::-webkit-input-placeholder {
-  color: transparent;
-}
