@@ -15,11 +15,10 @@
       <%= link_to fact do %>
         <h2 class="overview-list-title"><%= fact.title %></h2>
         <span class="icon">b</span>
-
         <% if current_user.admin? %>
-          <%= link_to 'Bewerk feitje', edit_fact_path(fact) %>
+          <%= link_to 'Bewerk feitje', edit_fact_path(fact), class:"button blue" %>
           <%= link_to 'Verwijder feitje', fact, method: :delete,
-            data: { confirm: "Weet je het zeker?" } %>
+            data: { confirm: "Weet je het zeker?" }, class:"button white" %>
         <% end %>
       <% end %>
     </li>
